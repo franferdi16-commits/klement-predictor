@@ -1,77 +1,50 @@
 import streamlit as st
 import numpy as np
 import scipy.stats as stats
+import data
 
-# Configuración de la interfaz
-st.set_page_config(
-    page_title="Klement vs. Modelo Dos Predictor", 
-    page_icon="📊", 
-    layout="centered"
-)
+st.set_page_config(page_title="World Cup Pro Predictor 2026", page_icon="⚽", layout="wide")
 
-st.title("📊 Simulador de Doble Motor Estadístico")
-st.markdown("""
-### ¿Quién lee mejor el fútbol? ¿La banca europea o las variables alternativas?
-Esta aplicación corre **10,000 simulaciones de Montecarlo** en paralelo usando dos lógicas matemáticas distintas.
-""")
+st.title("⚽ World Cup Pro Predictor 2026")
+st.markdown("### Consola Avanzada de Simulación No Lineal y Control Log Loss")
+st.markdown("---")
 
-# Base de datos global unificada y expandida con variables para ambos modelos
-teams_data = {
-    # --- GRUPO A CALIBRADO ---
-    "México": {"ranking": 15, "pib": 11000, "temp": 21.0, "poblacion": 128.5, "confed": "CONCACAF", "campeon_defensor": False, "bullicio_klement": -0.15, "bullicio_garraton": 0.4},
-    "Corea del Sur": {"ranking": 22, "pib": 32000, "temp": 12.5, "poblacion": 51.7, "confed": "AFC", "campeon_defensor": False, "bullicio_klement": 0.10, "bullicio_garraton": 0.1},
-    "Chequia": {"ranking": 36, "pib": 27000, "temp": 8.0, "poblacion": 10.8, "confed": "UEFA", "campeon_defensor": False, "bullicio_klement": 0.15, "bullicio_garraton": 0.15},
-    "Sudáfrica": {"ranking": 59, "pib": 6000, "temp": 17.5, "poblacion": 60.6, "confed": "CAF", "campeon_defensor": False, "bullicio_klement": 0.10, "bullicio_garraton": 0.2},
+# Verificar persistencia de datos de sesión
+if "audit_history" not in st.session_state:
+    st.session_state.audit_history = []
+
+tab1, tab2 = st.tabs(["📅 Calendario y Simulación de Montecarlo", "📊 Registro Real y Análisis de Error"])
+
+with tab1:
+    st.subheader("🗓️ Selección de Partido desde el Fixture")
+    fixture_options = [f"Partido {p['id']} [Grupo {p['grupo']}]: {p['local']} vs. {p['visitante']}" for p in data.FIXTURE]
+    selected_match_str = st.selectbox("Elige un enfrentamiento:", fixture_options)
     
-    # --- CONMEBOL (EXPANDIDO) ---
-    "Argentina": {"ranking": 1, "pib": 13000, "temp": 14.0, "poblacion": 46.2, "confed": "CONMEBOL", "campeon_defensor": True, "bullicio_klement": 0.40, "bullicio_garraton": 0.5},
-    "Brasil": {"ranking": 5, "pib": 10000, "temp": 25.0, "poblacion": 215.3, "confed": "CONMEBOL", "campeon_defensor": False, "bullicio_klement": 0.40, "bullicio_garraton": 0.45},
-    "Uruguay": {"ranking": 11, "pib": 20000, "temp": 17.5, "poblacion": 3.4, "confed": "CONMEBOL", "campeon_defensor": False, "bullicio_klement": 0.35, "bullicio_garraton": 0.5},
-    "Colombia": {"ranking": 12, "pib": 6500, "temp": 22.0, "poblacion": 51.5, "confed": "CONMEBOL", "campeon_defensor": False, "bullicio_klement": 0.30, "bullicio_garraton": 0.5},
-    "Ecuador": {"ranking": 31, "pib": 6300, "temp": 21.5, "poblacion": 18.0, "confed": "CONMEBOL", "campeon_defensor": False, "bullicio_klement": 0.25, "bullicio_garraton": 0.45},
-    
-    # --- UEFA & OTRAS POTENCIAS ---
-    "Países Bajos": {"ranking": 7, "pib": 62000, "temp": 10.0, "poblacion": 18.0, "confed": "UEFA", "campeon_defensor": False, "bullicio_klement": 0.20, "bullicio_garraton": 0.2},
-    "Portugal": {"ranking": 6, "pib": 26000, "temp": 15.5, "poblacion": 10.4, "confed": "UEFA", "campeon_defensor": False, "bullicio_klement": 0.25, "bullicio_garraton": 0.25},
-    "Francia": {"ranking": 2, "pib": 45000, "temp": 11.0, "poblacion": 68.0, "confed": "UEFA", "campeon_defensor": False, "bullicio_klement": 0.30, "bullicio_garraton": 0.3},
-    "España": {"ranking": 3, "pib": 32000, "temp": 14.5, "poblacion": 48.0, "confed": "UEFA", "campeon_defensor": False, "bullicio_klement": 0.30, "bullicio_garraton": 0.3},
-    "Inglaterra": {"ranking": 4, "pib": 46000, "temp": 10.5, "poblacion": 56.5, "confed": "UEFA", "campeon_defensor": False, "bullicio_klement": 0.25, "bullicio_garraton": 0.2},
-    "Bélgica": {"ranking": 3, "pib": 50000, "temp": 10.0, "poblacion": 11.7, "confed": "UEFA", "campeon_defensor": False, "bullicio_klement": 0.20, "bullicio_garraton": 0.2},
-    "Croacia": {"ranking": 10, "pib": 18000, "temp": 12.0, "poblacion": 3.8, "confed": "UEFA", "campeon_defensor": False, "bullicio_klement": 0.30, "bullicio_garraton": 0.4},
-    "Estados Unidos": {"ranking": 11, "pib": 80000, "temp": 12.0, "poblacion": 334.9, "confed": "CONCACAF", "campeon_defensor": False, "bullicio_klement": 0.20, "bullicio_garraton": 0.2},
-    "Canadá": {"ranking": 49, "pib": 52000, "temp": -5.0, "poblacion": 38.9, "confed": "CONCACAF", "campeon_defensor": False, "bullicio_klement": -0.10, "bullicio_garraton": 0.2},
-    "Japón": {"ranking": 18, "pib": 34000, "temp": 11.5, "poblacion": 125.1, "confed": "AFC", "campeon_defensor": False, "bullicio_klement": 0.15, "bullicio_garraton": 0.15},
-    "Marruecos": {"ranking": 13, "pib": 4000, "temp": 17.5, "poblacion": 37.5, "confed": "CAF", "campeon_defensor": False, "bullicio_klement": 0.35, "bullicio_garraton": 0.35}
-}
+    try:
+        match_id = int(selected_match_str.split(" ")[1].replace("[", ""))
+        match_data = next(p for p in data.FIXTURE if p['id'] == match_id)
+        
+        team_a = match_data['local']
+        team_b = match_data['visitante']
+        
+        a = data.TEAMS[team_a]
+        b = data.TEAMS[team_b]
+    except Exception as e:
+        st.error("Error al procesar el mapeo del fixture. Verifica el archivo data.py.")
+        st.stop()
 
-st.subheader("⚽ Configurar Enfrentamiento de la Jornada")
-col1, col2 = st.columns(2)
-with col1:
-    team_a = st.selectbox("Selección A (Local)", list(teams_data.keys()), index=0)
-with col2:
-    team_b = st.selectbox("Selección B (Visitante)", list(teams_data.keys()), index=1)
-
-if team_a == team_b:
-    st.error("⚠️ Selecciona dos equipos distintos.")
-else:
-    a = teams_data[team_a]
-    b = teams_data[team_b]
-
-    # --- FUNCIÓN MOTOR 1: REPLICACIÓN KLEMENT ---
+    # --- MATEMÁTICAS MOTOR 1: KLEMENT ---
     def engine_klement(datos, rival_confed, es_local):
         f_deportiva = (100 - datos["ranking"]) * 0.40
         pib_k = datos["pib"] / 1000
         f_economica = (pib_k * 0.15) - (0.0015 * (pib_k ** 2))
         f_demografica = np.log(datos["poblacion"]) * 0.20
         f_clima = -0.08 * abs(datos["temp"] - 14.0)
-        f_campeon = -0.6 if datos["campeon_defensor"] else 0.0
-        
-        fuerza_base = f_deportiva + f_economica + f_demografica + f_clima + f_campeon
-        if es_local:
-            fuerza_base *= (1.0 + datos["bullicio_klement"])
-        return max(0.5, fuerza_base / 13.0)
+        fuerza = f_deportiva + f_economica + f_demografica + f_clima + (-0.6 if datos["campeon"] else 0.0)
+        if es_local: fuerza *= (1.0 + datos["k_noise"])
+        return max(0.5, fuerza / 13.0)
 
-    # --- FUNCIÓN MOTOR 2: MODELO DOS ---
+    # --- MATEMÁTICAS MOTOR 2: MODELO DOS ---
     def engine_model_two(datos, rival_confed, es_local):
         f_deportiva = (100 - datos["ranking"]) * 0.50
         pib_k = datos["pib"] / 1000
@@ -79,45 +52,81 @@ else:
         f_demografica = np.log(datos["poblacion"]) * 0.25
         f_clima = -0.05 * abs(datos["temp"] - 14.0)
         
-        fuerza_base = f_deportiva + f_economica + f_demografica + f_clima
+        fuerza = f_deportiva + f_economica + f_demografica + f_clima
         if es_local:
-            resistencia_rival = 1.0 if rival_confed == "CONMEBOL" else (0.75 if rival_confed == "UEFA" else 0.55)
-            factor_presion = datos["bullicio_garraton"] * (1.0 - resistencia_rival)
-            fuerza_base *= (1.0 + factor_presion)
-        return max(0.5, fuerza_base / 12.5)
+            resistencia = 1.0 if rival_confed == "CONMEBOL" else (0.75 if rival_confed == "UEFA" else 0.55)
+            fuerza *= (1.0 + (datos["m2_noise"] * (1.0 - resistencia)))
+        return max(0.5, fuerza / 12.5)
 
-    if st.button("🚀 Ejecutar Comparación de Modelos"):
-        # Ejecución simultánea
-        lk_a = engine_klement(a, b["confed"], es_local=True)
-        lk_b = engine_klement(b, a["confed"], es_local=False)
+    lk_a = engine_klement(a, b["confed"], es_local=True)
+    lk_b = engine_klement(b, a["confed"], es_local=False)
+    lg_a = engine_model_two(a, b["confed"], es_local=True)
+    lg_b = engine_model_two(b, a["confed"], es_local=False)
+
+    if st.button("🎲 Correr 10,000 Simulaciones"):
         sim_k_a = stats.poisson.rvs(mu=lk_a, size=10000)
         sim_k_b = stats.poisson.rvs(mu=lk_b, size=10000)
-        
-        lg_a = engine_model_two(a, b["confed"], es_local=True)
-        lg_b = engine_model_two(b, a["confed"], es_local=False)
         sim_g_a = stats.poisson.rvs(mu=lg_a, size=10000)
         sim_g_b = stats.poisson.rvs(mu=lg_b, size=10000)
 
-        # Porcentajes Klement
-        pk_a = (np.sum(sim_k_a > sim_k_b) / 10000) * 100
-        pk_emp = (np.sum(sim_k_a == sim_k_b) / 10000) * 100
-        pk_b = (np.sum(sim_k_b > sim_k_a) / 10000) * 100
+        st.session_state.pk_a = float(np.sum(sim_k_a > sim_k_b) / 100)
+        st.session_state.pk_emp = float(np.sum(sim_k_a == sim_k_b) / 100)
+        st.session_state.pk_b = float(np.sum(sim_k_b > sim_k_a) / 100)
 
-        # Porcentajes Modelo Dos
-        pg_a = (np.sum(sim_g_a > sim_g_b) / 10000) * 100
-        pg_emp = (np.sum(sim_g_a == sim_g_b) / 10000) * 100
-        pg_b = (np.sum(sim_g_b > sim_g_a) / 10000) * 100
+        st.session_state.pg_a = float(np.sum(sim_g_a > sim_g_b) / 100)
+        st.session_state.pg_emp = float(np.sum(sim_g_a == sim_g_b) / 100)
+        st.session_state.pg_b = float(np.sum(sim_g_b > sim_g_a) / 100)
+        st.session_state.active_match = f"{team_a} vs. {team_b}"
 
-        # Bloque Visual 1: Klement Puro
-        st.subheader("🇪🇺 Modelo 1: Predicción Joachim Klement (Econometría)")
-        c1, c2, c3 = st.columns(3)
-        c1.metric(f"Gana {team_a}", f"{pk_a:.1f}%")
-        c2.metric("Empate", f"{pk_emp:.1f}%")
-        c3.metric(f"Gana {team_b}", f"{pk_b:.1f}%")
+    if "active_match" in st.session_state and st.session_state.active_match == f"{team_a} vs. {team_b}":
+        st.markdown(f"### 📊 Resultados de Simulación: **{team_a} vs. {team_b}**")
+        c1, c2 = st.columns(2)
+        with c1:
+            st.info("🇪🇺 **Modelo 1: Joachim Klement (Econometría)**")
+            st.metric(f"Victoria {team_a}", f"{st.session_state.pk_a:.1f}%")
+            st.metric("Empate", f"{st.session_state.pk_emp:.1f}%")
+            st.metric(f"Victoria {team_b}", f"{st.session_state.pk_b:.1f}%")
+        with c2:
+            st.success("📊 **Modelo Dos: Ajuste Alternativo Integrado**")
+            st.metric(f"Victoria {team_a}", f"{st.session_state.pg_a:.1f}%")
+            st.metric("Empate", f"{st.session_state.pg_emp:.1f}%")
+            st.metric(f"Victoria {team_b}", f"{st.session_state.pg_b:.1f}%")
 
-        # Bloque Visual 2: Modelo Dos
-        st.subheader("📊 Modelo Dos: Ajuste Alternativo Integrado")
-        c4, c5, c6 = st.columns(3)
-        c4.metric(f"Gana {team_a}", f"{pg_a:.1f}%")
-        c5.metric("Empate", f"{pg_emp:.1f}%")
-        c6.metric(f"Gana {team_b}", f"{pg_b:.1f}%")
+with tab2:
+    st.subheader("📝 Cargar Marcador Oficial de Campo")
+    if "active_match" in st.session_state:
+        t_split = st.session_state.active_match.split(" vs. ")
+        col_g1, col_g2 = st.columns(2)
+        with col_g1:
+            goles_a = st.number_input(f"Goles de {t_split[0]}", min_value=0, step=1, key="g_real_a")
+        with col_g2:
+            goles_b = st.number_input(f"Goles de {t_split[1]}", min_value=0, step=1, key="g_real_b")
+            
+        if st.button("💾 Computar Desviaciones y Log Loss"):
+            if goles_a > goles_b: y_real = 1.0
+            elif goles_a == goles_b: y_real = 0.5
+            else: y_real = 0.0
+
+            p_k = st.session_state.pk_a/100 if y_real==1.0 else (st.session_state.pk_emp/100 if y_real==0.5 else st.session_state.pk_b/100)
+            p_g = st.session_state.pg_a/100 if y_real==1.0 else (st.session_state.pg_emp/100 if y_real==0.5 else st.session_state.pg_b/100)
+
+            log_loss_k = -np.log(max(0.01, p_k))
+            log_loss_g = -np.log(max(0.01, p_g))
+
+            st.session_state.audit_history.append({
+                "Partido": st.session_state.active_match,
+                "Resultado Real": f"{goles_a} - {goles_b}",
+                "Log Loss Klement": round(log_loss_k, 3),
+                "Log Loss Modelo 2": round(log_loss_g, 3)
+            })
+            st.success("¡Cuadro de auditoría actualizado!")
+
+    if st.session_state.audit_history:
+        st.markdown("---")
+        st.subheader("📈 Historial de Pérdida Logarítmica Acumulada")
+        st.dataframe(st.session_state.audit_history, use_container_width=True)
+        mean_k = np.mean([x["Log Loss Klement"] for x in st.session_state.audit_history])
+        mean_g = np.mean([x["Log Loss Modelo 2"] for x in st.session_state.audit_history])
+        st.info(f"💡 **Evaluación:** El error promedio más bajo gana. -> **Klement: {mean_k:.3f}** | **Modelo Dos: {mean_g:.3f}**")
+    else:
+        st.info("No hay registros guardados en esta sesión. Ejecuta una simulación en la pestaña 1 para habilitar el registro.")
