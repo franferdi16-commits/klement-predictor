@@ -28,7 +28,6 @@ with tab1:
     # Generar opciones legibles para el selectbox
     fixture_options = [f"Partido {p['id']} [{p['fase']}]: {p['local']} vs. {p['visitante']}" for p in data.FIXTURE]
     selected_match_str = st.selectbox("Elige un enfrentamiento:", fixture_options)
-
     try:
         # Extracción segura del ID numérico del partido
         part_id_texto = selected_match_str.split("Partido ")[1]
@@ -79,14 +78,12 @@ with tab1:
         sim_k_b = stats.poisson.rvs(mu=lk_b, size=10000)
         sim_g_a = stats.poisson.rvs(mu=lg_a, size=10000)
         sim_g_b = stats.poisson.rvs(mu=lg_b, size=10000)
-
         st.session_state.pk_a = float(np.sum(sim_k_a > sim_k_b) / 100)
         st.session_state.pk_emp = float(np.sum(sim_k_a == sim_k_b) / 100)
         st.session_state.pk_b = float(np.sum(sim_k_b > sim_k_a) / 100)
         st.session_state.pg_a = float(np.sum(sim_g_a > sim_g_b) / 100)
         st.session_state.pg_emp = float(np.sum(sim_g_a == sim_g_b) / 100)
         st.session_state.pg_b = float(np.sum(sim_g_b > sim_g_a) / 100)
-
         st.session_state.active_match = f"{team_a} vs. {team_b}"
         st.session_state.active_id = match_id
         st.session_state.active_fase = fase_actual
@@ -138,3 +135,5 @@ with tab2:
                     c_p1, c_p2 = st.columns(2)
                     with c_p1:
                         pen_a = st.number_input(f"Penales Anotados por {local_name}", min_value=0, step=1)
+                    with c_p2:
+                        pen_b =
