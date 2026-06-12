@@ -138,4 +138,3 @@ with tab2:
                     c_p1, c_p2 = st.columns(2)
                     with c_p1:
                         pen_a = st.number_input(f"Penales Anotados por {local_name}", min_value=0, step=1)
-                    with c_p2:
