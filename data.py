@@ -30,5 +30,4 @@ TEAMS = {
     "Suecia": { "grupo": "F", "ranking": 28, "pib": 56000, "temp": 2.0, "poblacion": 10.5, "confed": "UEFA", "campeon": False, "k_noise": 0.15, "m2_noise": 0.15 },
     "Túnez": { "grupo": "F", "ranking": 41, "pib": 3800, "temp": 19.0, "poblacion": 12.4, "confed": "CAF", "campeon": False, "k_noise": 0.15, "m2_noise": 0.20 },
     # --- GRUPO G ---
-    "Bélgica": { "grupo": "G", "ranking": 3, "pib": 53000, "temp": 10.0, "poblacion": 11.7, "confed": "UEFA", "campeon": False, "k_noise": 0.25, "m2_noise": 0.20 },
-    "Egipto": { "grupo": "G", "ranking": 36, "pib":
+    "Bélgica": { "grupo": "G", "ranking": 3, "pib": 53000, "temp": 10.0, "poblacion": 11.7, "confed": "UEFA", "campeon": False, "k_noise":
