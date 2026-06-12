@@ -129,10 +129,4 @@ with tab2:
                 with c_ex1:
                     goles_ee_a = st.number_input(f"Goles en Prórroga de {local_name}", min_value=0, step=1)
                 with c_ex2:
-                    goles_ee_b = st.number_input(f"Goles en Prórroga de {visitante_name}", min_value=0, step=1)
-                if (goles_a + goles_ee_a) == (goles_b + goles_ee_b):
-                    st.error("🥅 Empate persistente. Definición obligatoria por Penales.")
-                    c_p1, c_p2 = st.columns(2)
-                    with c_p1:
-                        pen_a = st.number_input(f"Penales Anotados por {local_name}", min_value=0, step=1)
-                    with c_p2: pen_b =
+                    goles_ee_b = st.number_input(f"Goles en Prórroga de {visitante_name}", min_value=0, step=1
