@@ -1,5 +1,4 @@
 # data.py - Base de Datos Macroeconómica, Demográfica y Climática Oficial
-# Verificada y auditada para el despliegue masivo
 
 TEAMS = {
     # --- GRUPO A ---
@@ -91,14 +90,17 @@ TEAMS = {
     }
 }
 
-# Fixture Estructurado de la Jornada Inicial para Auditoría Directa
 FIXTURE = [
-    {"id": 1, "grupo": "A", "local": "México", "visitante": "Sudáfrica"},
-    {"id": 2, "grupo": "A", "local": "Corea del Sur", "visitante": "Chequia"},
-    {"id": 3, "grupo": "B", "local": "Canadá", "visitante": "Irlanda"},
-    {"id": 4, "grupo": "B", "local": "Marruecos", "visitante": "Colombia"},
-    {"id": 5, "grupo": "C", "local": "Estados Unidos", "visitante": "Paraguay"},
-    {"id": 6, "grupo": "C", "local": "Ecuador", "visitante": "Fiyi"},
-    {"id": 7, "grupo": "D", "local": "Argentina", "visitante": "Francia"},
-    {"id": 8, "grupo": "E", "local": "Brasil", "visitante": "Japón"}
+    {"id": 1, "grupo": "A", "fase": "Grupo A", "local": "México", "visitante": "Sudáfrica"},
+    {"id": 2, "grupo": "A", "fase": "Grupo A", "local": "Corea del Sur", "visitante": "Chequia"},
+    {"id": 3, "grupo": "B", "fase": "Grupo B", "local": "Canadá", "visitante": "Irlanda"},
+    {"id": 4, "grupo": "B", "fase": "Grupo B", "local": "Marruecos", "visitante": "Colombia"},
+    {"id": 5, "grupo": "C", "fase": "Grupo C", "local": "Estados Unidos", "visitante": "Paraguay"},
+    {"id": 6, "grupo": "C", "fase": "Grupo C", "local": "Ecuador", "visitante": "Fiyi"},
+    {"id": 7, "grupo": "D", "fase": "Grupo D", "local": "Argentina", "visitante": "Francia"},
+    {"id": 8, "grupo": "E", "fase": "Grupo E", "local": "Brasil", "visitante": "Japón"},
+    # Fases Finales de Simulación Avanzada
+    {"id": 9, "grupo": "Eliminatoria", "fase": "Cuartos de Final", "local": "Argentina", "visitante": "Brasil"},
+    {"id": 10, "grupo": "Eliminatoria", "fase": "Semifinal", "local": "Francia", "visitante": "España"},
+    {"id": 11, "grupo": "Eliminatoria", "fase": "Final", "local": "Portugal", "visitante": "Países Bajos"},
 ]
