@@ -18,8 +18,6 @@ if "audit_history" not in st.session_state:
     st.session_state.audit_history = []
 if "partidos_jugados" not in st.session_state:
     st.session_state.partidos_jugados = {}
-
-# Diccionario global persistente para almacenar las simulaciones por cada id de partido
 if "simulaciones_acumuladas" not in st.session_state:
     st.session_state.simulaciones_acumuladas = {}
 
@@ -34,6 +32,8 @@ tab1, tab2, tab3 = st.tabs([
 # ==============================================================================
 with tab1:
     st.subheader("🗓️ Selección de Partido desde el Fixture Oficial")
+    
+    # Lee dinámicamente los 72 partidos del nuevo data.py
     fixture_options = [f"Partido {p['id']} [{p['fase']}]: {p['local']} vs. {p['visitante']}" for p in data.FIXTURE]
     selected_match_str = st.selectbox("Elige un enfrentamiento:", fixture_options)
     
@@ -47,18 +47,16 @@ with tab1:
         st.error("Error al procesar el mapeo del fixture. Revisa las claves de data.py.")
         st.stop()
 
-    # Cálculo paramétrico base instantáneo
+    # Motores de cálculo paramétrico
     lk_a = engines.engine_klement(a, b["confed"], es_local=True)
     lk_b = engines.engine_klement(b, a["confed"], es_local=False)
     lg_a = engines.engine_model_two(a, b["confed"], es_local=True)
     lg_b = engines.engine_model_two(b, a["confed"], es_local=False)
 
     if st.button("🎲 Correr 10,000 Simulaciones de Montecarlo"):
-        # Se ejecuta el motor estocástico
         resultados = engines.ejecutar_montecarlo(lk_a, lk_b, lg_a, lg_b)
         
-        # SOLUCIÓN CLAVE: Guardamos los resultados indexados por el MATCH_ID único 
-        # para que no se borren al interactuar o cambiar de pestaña.
+        # Almacenamiento persistente por ID para evitar borrados al cambiar de pestaña
         st.session_state.simulaciones_acumuladas[match_id] = {
             "match_str": f"{team_a} vs. {team_b}",
             "fase": fase_actual,
@@ -69,11 +67,10 @@ with tab1:
             "pg_emp": resultados["pg_emp"],
             "pg_b": resultados["pg_b"]
         }
-        # Declaramos el partido actual como activo en la sesión
         st.session_state.active_id = match_id
-        st.success(f"¡Simulación estocástica completada para el Partido {match_id}!")
+        st.success(f"¡Simulación completada para el Partido {match_id}!")
 
-    # Despliegue visual condicionado a la existencia de la simulación en memoria
+    # Despliegue de métricas
     if match_id in st.session_state.simulaciones_acumuladas:
         sim = st.session_state.simulaciones_acumuladas[match_id]
         st.markdown(f"### 📊 Probabilidades Estocásticas: **{team_a} vs. {team_b}**")
@@ -97,7 +94,6 @@ with tab1:
 with tab2:
     st.subheader("📝 Cargar Marcador Oficial de Campo")
     
-    # Verificamos si el usuario ha seleccionado un partido válido que ya tenga simulación
     if "active_id" in st.session_state and st.session_state.active_id in st.session_state.simulaciones_acumuladas:
         id_activo = st.session_state.active_id
         sim_activa = st.session_state.simulaciones_acumuladas[id_activo]
@@ -112,20 +108,17 @@ with tab2:
             goles_b = st.number_input(f"Goles de {visitante_name}", min_value=0, step=1, key=f"g_v_{id_activo}")
 
         if st.button("💾 Computar Desviaciones y Log Loss"):
-            # Mapeo binario / probabilístico del resultado real
             y_real = 1.0 if goles_a > goles_b else (0.5 if goles_a == goles_b else 0.0)
             
-            # Recuperación exacta de probabilidades del almacenamiento persistente
             p_k = sim_activa["pk_a"]/100 if y_real==1.0 else (sim_activa["pk_emp"]/100 if y_real==0.5 else sim_activa["pk_b"]/100)
             p_g = sim_activa["pg_a"]/100 if y_real==1.0 else (sim_activa["pg_emp"]/100 if y_real==0.5 else sim_activa["pg_b"]/100)
             
-            # Cálculo de penalización logarítmica (Log Loss) con épsilon de seguridad
             log_loss_k = -np.log(max(0.001, p_k))
             log_loss_g = -np.log(max(0.001, p_g))
 
             letra_grupo = sim_activa["fase"].replace("Grupo ", "").strip()
             
-            # Inyección limpia en el diccionario de partidos jugados (para actualizar tablas)
+            # Se guarda el resultado en el estado de la sesión
             st.session_state.partidos_jugados[id_activo] = {
                 "local": local_name,
                 "visitante": visitante_name,
@@ -134,7 +127,6 @@ with tab2:
                 "grupo": letra_grupo
             }
             
-            # Añadir registro histórico de auditoría sin duplicar eventos idénticos
             st.session_state.audit_history.append({
                 "ID": id_activo,
                 "Partido": sim_activa["match_str"],
@@ -142,13 +134,12 @@ with tab2:
                 "Log Loss Klement": round(log_loss_k, 4),
                 "Log Loss Model 2": round(log_loss_g, 4)
             })
-            st.success(f"✅ ¡Marcador Guardado y Grabado en Memoria! {local_name} {goles_a} - {goles_b} {visitante_name}.")
+            st.success(f"✅ ¡Marcador Guardado! {local_name} {goles_a} - {goles_b} {visitante_name}.")
     else:
-        st.info("💡 Por favor, ve a la pestaña 1 y corre la simulación de Montecarlo para el partido que deseas registrar.")
+        st.info("💡 Por favor, ve a la pestaña 1 y corre la simulación para el partido que deseas registrar.")
 
     st.markdown("### 📋 Historial de Auditoría de Modelos (Control Log Loss)")
     if st.session_state.audit_history:
-        # Se muestra la tabla completa acumulada de auditoría sin perderse
         st.dataframe(pd.DataFrame(st.session_state.audit_history), use_container_width=True, hide_index=True)
 
 # ==============================================================================
@@ -158,12 +149,10 @@ with tab3:
     st.subheader("🏆 Posiciones Reales Actualizadas de la Fase de Grupos")
     grupos_disponibles = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"]
     
-    # Creamos un diseño interactivo de rejilla expandible para no saturar la pantalla
     cols_vista = st.columns(3)
     for index, g in enumerate(grupos_disponibles):
         with cols_vista[index % 3]:
             with st.expander(f"📊 Tabla del Grupo {g}", expanded=True):
-                # Pasamos el diccionario de partidos mutados por el session_state
                 df_grupo = utils.calcular_tabla_grupo(g, st.session_state.partidos_jugados)
                 if df_grupo is not None and not df_grupo.empty:
                     st.dataframe(df_grupo, use_container_width=True, hide_index=True)
