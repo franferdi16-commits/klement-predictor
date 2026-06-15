@@ -11,11 +11,17 @@ st.title("⚽ World Cup Pro Predictor 2026")
 st.markdown("### Consola Avanzada de Simulación No Lineal y Control Log Loss")
 st.markdown("---")
 
-# Inicialización segura del Session State
+# ==============================================================================
+# INICIALIZACIÓN SEGURA Y PERSISTENTE DEL SESSION STATE
+# ==============================================================================
 if "audit_history" not in st.session_state:
     st.session_state.audit_history = []
 if "partidos_jugados" not in st.session_state:
     st.session_state.partidos_jugados = {}
+
+# Diccionario global persistente para almacenar las simulaciones por cada id de partido
+if "simulaciones_acumuladas" not in st.session_state:
+    st.session_state.simulaciones_acumuladas = {}
 
 tab1, tab2, tab3 = st.tabs([
     "📅 Calendario y Simulación de Montecarlo",
@@ -23,11 +29,14 @@ tab1, tab2, tab3 = st.tabs([
     "🏆 Tablas de Posiciones en Vivo"
 ])
 
+# ==============================================================================
 # --- PESTAÑA 1: MONTECARLO ---
+# ==============================================================================
 with tab1:
     st.subheader("🗓️ Selección de Partido desde el Fixture Oficial")
     fixture_options = [f"Partido {p['id']} [{p['fase']}]: {p['local']} vs. {p['visitante']}" for p in data.FIXTURE]
     selected_match_str = st.selectbox("Elige un enfrentamiento:", fixture_options)
+    
     try:
         part_id_texto = selected_match_str.split("Partido ")[1]
         match_id = int(part_id_texto.split(" [")[0])
@@ -38,78 +47,125 @@ with tab1:
         st.error("Error al procesar el mapeo del fixture. Revisa las claves de data.py.")
         st.stop()
 
+    # Cálculo paramétrico base instantáneo
     lk_a = engines.engine_klement(a, b["confed"], es_local=True)
     lk_b = engines.engine_klement(b, a["confed"], es_local=False)
     lg_a = engines.engine_model_two(a, b["confed"], es_local=True)
     lg_b = engines.engine_model_two(b, a["confed"], es_local=False)
 
     if st.button("🎲 Correr 10,000 Simulaciones de Montecarlo"):
+        # Se ejecuta el motor estocástico
         resultados = engines.ejecutar_montecarlo(lk_a, lk_b, lg_a, lg_b)
-        st.session_state.update(resultados)
-        st.session_state.active_match = f"{team_a} vs. {team_b}"
+        
+        # SOLUCIÓN CLAVE: Guardamos los resultados indexados por el MATCH_ID único 
+        # para que no se borren al interactuar o cambiar de pestaña.
+        st.session_state.simulaciones_acumuladas[match_id] = {
+            "match_str": f"{team_a} vs. {team_b}",
+            "fase": fase_actual,
+            "pk_a": resultados["pk_a"],
+            "pk_emp": resultados["pk_emp"],
+            "pk_b": resultados["pk_b"],
+            "pg_a": resultados["pg_a"],
+            "pg_emp": resultados["pg_emp"],
+            "pg_b": resultados["pg_b"]
+        }
+        # Declaramos el partido actual como activo en la sesión
         st.session_state.active_id = match_id
-        st.session_state.active_fase = fase_actual
+        st.success(f"¡Simulación estocástica completada para el Partido {match_id}!")
 
-    if "active_match" in st.session_state and st.session_state.active_match == f"{team_a} vs. {team_b}":
+    # Despliegue visual condicionado a la existencia de la simulación en memoria
+    if match_id in st.session_state.simulaciones_acumuladas:
+        sim = st.session_state.simulaciones_acumuladas[match_id]
         st.markdown(f"### 📊 Probabilidades Estocásticas: **{team_a} vs. {team_b}**")
         c1, c2 = st.columns(2)
         with c1:
             st.info("🇪🇺 **Modelo 1: Joachim Klement (Econometría)**")
-            st.metric(f"Victoria {team_a}", f"{st.session_state.pk_a:.1f}%")
-            st.metric("Empate", f"{st.session_state.pk_emp:.1f}%")
-            st.metric(f"Victoria {team_b}", f"{st.session_state.pk_b:.1f}%")
+            st.metric(f"Victoria {team_a}", f"{sim['pk_a']:.1f}%")
+            st.metric("Empate", f"{sim['pk_emp']:.1f}%")
+            st.metric(f"Victoria {team_b}", f"{sim['pk_b']:.1f}%")
         with c2:
             st.success("📊 **Modelo Dos: Ajuste Alternativo Integrado**")
-            st.metric(f"Victoria {team_a}", f"{st.session_state.pg_a:.1f}%")
-            st.metric("Empate", f"{st.session_state.pg_emp:.1f}%")
-            st.metric(f"Victoria {team_b}", f"{st.session_state.pg_b:.1f}%")
+            st.metric(f"Victoria {team_a}", f"{sim['pg_a']:.1f}%")
+            st.metric("Empate", f"{sim['pg_emp']:.1f}%")
+            st.metric(f"Victoria {team_b}", f"{sim['pg_b']:.1f}%")
+    else:
+        st.warning("⚠️ No hay simulaciones en memoria para este partido. Presiona el botón de arriba.")
 
-# --- PESTAÑA 2: REGISTRO REAL ---
+# ==============================================================================
+# --- PESTAÑA 2: REGISTRO REAL Y ANÁLISIS DE ERROR ---
+# ==============================================================================
 with tab2:
     st.subheader("📝 Cargar Marcador Oficial de Campo")
-    if "active_match" in st.session_state:
-        local_name, visitante_name = st.session_state.active_match.split(" vs. ")
+    
+    # Verificamos si el usuario ha seleccionado un partido válido que ya tenga simulación
+    if "active_id" in st.session_state and st.session_state.active_id in st.session_state.simulaciones_acumuladas:
+        id_activo = st.session_state.active_id
+        sim_activa = st.session_state.simulaciones_acumuladas[id_activo]
+        local_name, visitante_name = sim_activa["match_str"].split(" vs. ")
+        
+        st.caption(f"Registrando datos para el **Partido {id_activo}** ({sim_activa['fase']})")
+        
         col_g1, col_g2 = st.columns(2)
         with col_g1:
-            goles_a = st.number_input(f"Goles de {local_name}", min_value=0, step=1, key="g_r_a")
+            goles_a = st.number_input(f"Goles de {local_name}", min_value=0, step=1, key=f"g_l_{id_activo}")
         with col_g2:
-            goles_b = st.number_input(f"Goles de {visitante_name}", min_value=0, step=1, key="g_r_b")
+            goles_b = st.number_input(f"Goles de {visitante_name}", min_value=0, step=1, key=f"g_v_{id_activo}")
 
         if st.button("💾 Computar Desviaciones y Log Loss"):
+            # Mapeo binario / probabilístico del resultado real
             y_real = 1.0 if goles_a > goles_b else (0.5 if goles_a == goles_b else 0.0)
-            p_k = st.session_state.pk_a/100 if y_real==1.0 else (st.session_state.pk_emp/100 if y_real==0.5 else st.session_state.pk_b/100)
-            p_g = st.session_state.pg_a/100 if y_real==1.0 else (st.session_state.pg_emp/100 if y_real==0.5 else st.session_state.pg_b/100)
-            log_loss_k = -np.log(max(0.01, p_k))
-            log_loss_g = -np.log(max(0.01, p_g))
+            
+            # Recuperación exacta de probabilidades del almacenamiento persistente
+            p_k = sim_activa["pk_a"]/100 if y_real==1.0 else (sim_activa["pk_emp"]/100 if y_real==0.5 else sim_activa["pk_b"]/100)
+            p_g = sim_activa["pg_a"]/100 if y_real==1.0 else (sim_activa["pg_emp"]/100 if y_real==0.5 else sim_activa["pg_b"]/100)
+            
+            # Cálculo de penalización logarítmica (Log Loss) con épsilon de seguridad
+            log_loss_k = -np.log(max(0.001, p_k))
+            log_loss_g = -np.log(max(0.001, p_g))
 
-            letra_grupo = st.session_state.active_fase.replace("Grupo ", "").strip()
-            st.session_state.partidos_jugados[st.session_state.active_id] = {
+            letra_grupo = sim_activa["fase"].replace("Grupo ", "").strip()
+            
+            # Inyección limpia en el diccionario de partidos jugados (para actualizar tablas)
+            st.session_state.partidos_jugados[id_activo] = {
                 "local": local_name,
                 "visitante": visitante_name,
                 "goles_l": goles_a,
                 "goles_v": goles_b,
                 "grupo": letra_grupo
             }
+            
+            # Añadir registro histórico de auditoría sin duplicar eventos idénticos
             st.session_state.audit_history.append({
-                "Partido": st.session_state.active_match,
+                "ID": id_activo,
+                "Partido": sim_activa["match_str"],
                 "Resultado": f"{goles_a} - {goles_b}",
-                "Log Loss Klement": round(log_loss_k, 3),
-                "Log Loss Model 2": round(log_loss_g, 3)
+                "Log Loss Klement": round(log_loss_k, 4),
+                "Log Loss Model 2": round(log_loss_g, 4)
             })
-            st.success(f"¡Marcador Guardado! {local_name} {goles_a} - {goles_b} {visitante_name}.")
+            st.success(f"✅ ¡Marcador Guardado y Grabado en Memoria! {local_name} {goles_a} - {goles_b} {visitante_name}.")
     else:
-        st.info("Primero corre una simulación en la pestaña 1.")
+        st.info("💡 Por favor, ve a la pestaña 1 y corre la simulación de Montecarlo para el partido que deseas registrar.")
 
-    st.markdown("### 📋 Historial de Auditoría de Modelos")
+    st.markdown("### 📋 Historial de Auditoría de Modelos (Control Log Loss)")
     if st.session_state.audit_history:
-        st.dataframe(pd.DataFrame(st.session_state.audit_history), use_container_width=True)
+        # Se muestra la tabla completa acumulada de auditoría sin perderse
+        st.dataframe(pd.DataFrame(st.session_state.audit_history), use_container_width=True, hide_index=True)
 
-# --- PESTAÑA 3: TABLAS DE POSICIONES ---
+# ==============================================================================
+# --- PESTAÑA 3: TABLAS DE POSICIONES EN VIVO ---
+# ==============================================================================
 with tab3:
     st.subheader("🏆 Posiciones Reales Actualizadas de la Fase de Grupos")
     grupos_disponibles = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"]
-    for g in grupos_disponibles:
-        df_grupo = utils.calcular_tabla_grupo(g, st.session_state.partidos_jugados)
-        if df_grupo is not None:
-            st.write(f"#### **Grupo {g}**")
-            st.table(df_grupo)
+    
+    # Creamos un diseño interactivo de rejilla expandible para no saturar la pantalla
+    cols_vista = st.columns(3)
+    for index, g in enumerate(grupos_disponibles):
+        with cols_vista[index % 3]:
+            with st.expander(f"📊 Tabla del Grupo {g}", expanded=True):
+                # Pasamos el diccionario de partidos mutados por el session_state
+                df_grupo = utils.calcular_tabla_grupo(g, st.session_state.partidos_jugados)
+                if df_grupo is not None and not df_grupo.empty:
+                    st.dataframe(df_grupo, use_container_width=True, hide_index=True)
+                else:
+                    st.caption("No se han registrado partidos oficiales para este grupo.")
