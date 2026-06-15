@@ -1,100 +1,207 @@
-# data.py - BASE DE DATOS OFICIAL Y VERIFICADA FIFA 2026 (48 SELECCIONES)
+# app.py - Interfaz Gráfica de Usuario unificada y optimizada
+import streamlit as st
+import pandas as pd
+import numpy as np
+import data
+import engines
+import utils
+import calibrador
 
-TEAMS = {
-    # --- GRUPO A ---
-    "México": { "grupo": "A", "ranking": 15, "pib": 11000, "temp": 21.0, "poblacion": 128.5, "confed": "CONCACAF", "campeon": False, "k_noise": -0.15, "m2_noise": 0.40 },
-    "Sudáfrica": { "grupo": "A", "ranking": 59, "pib": 6000, "temp": 17.5, "poblacion": 60.6, "confed": "CAF", "campeon": False, "k_noise": 0.10, "m2_noise": 0.20 },
-    "Corea del Sur": { "grupo": "A", "ranking": 22, "pib": 32000, "temp": 12.5, "poblacion": 51.7, "confed": "AFC", "campeon": False, "k_noise": 0.10, "m2_noise": 0.10 },
-    "Chequia": { "grupo": "A", "ranking": 36, "pib": 27000, "temp": 8.0, "poblacion": 10.8, "confed": "UEFA", "campeon": False, "k_noise": 0.15, "m2_noise": 0.15 },
-    
-    # --- GRUPO B ---
-    "Canadá": { "grupo": "B", "ranking": 49, "pib": 52000, "temp": -5.0, "poblacion": 38.9, "confed": "CONCACAF", "campeon": False, "k_noise": -0.10, "m2_noise": 0.20 },
-    "Bosnia y Herzegovina": { "grupo": "B", "ranking": 75, "pib": 9000, "temp": 10.0, "poblacion": 3.2, "confed": "UEFA", "campeon": False, "k_noise": 0.10, "m2_noise": 0.15 },
-    "Catar": { "grupo": "B", "ranking": 34, "pib": 82000, "temp": 27.0, "poblacion": 2.7, "confed": "AFC", "campeon": False, "k_noise": 0.15, "m2_noise": 0.20 },
-    "Suiza": { "grupo": "B", "ranking": 19, "pib": 93000, "temp": 5.5, "poblacion": 8.9, "confed": "UEFA", "campeon": False, "k_noise": 0.20, "m2_noise": 0.15 },
-    
-    # --- GRUPO C ---
-    "Brasil": { "grupo": "C", "ranking": 5, "pib": 10000, "temp": 25.0, "poblacion": 215.3, "confed": "CONMEBOL", "campeon": False, "k_noise": 0.40, "m2_noise": 0.45 },
-    "Marruecos": { "grupo": "C", "ranking": 13, "pib": 4000, "temp": 17.5, "poblacion": 37.5, "confed": "CAF", "campeon": False, "k_noise": 0.35, "m2_noise": 0.35 },
-    "Haití": { "grupo": "C", "ranking": 86, "pib": 1700, "temp": 25.0, "poblacion": 11.7, "confed": "CONCACAF", "campeon": False, "k_noise": 0.10, "m2_noise": 0.30 },
-    "Escocia": { "grupo": "C", "ranking": 39, "pib": 42000, "temp": 8.0, "poblacion": 5.4, "confed": "UEFA", "campeon": False, "k_noise": 0.15, "m2_noise": 0.20 },
-    
-    # --- GRUPO D ---
-    "Estados Unidos": { "grupo": "D", "ranking": 11, "pib": 80000, "temp": 12.0, "poblacion": 334.9, "confed": "CONCACAF", "campeon": False, "k_noise": -0.10, "m2_noise": 0.20 },
-    "Paraguay": { "grupo": "D", "ranking": 56, "pib": 5500, "temp": 22.0, "poblacion": 6.7, "confed": "CONMEBOL", "campeon": False, "k_noise": 0.25, "m2_noise": 0.50 },
-    "Australia": { "grupo": "D", "ranking": 24, "pib": 65000, "temp": 21.5, "poblacion": 26.0, "confed": "AFC", "campeon": False, "k_noise": 0.15, "m2_noise": 0.15 },
-    "Turquía": { "grupo": "D", "ranking": 40, "pib": 10000, "temp": 12.0, "poblacion": 85.3, "confed": "UEFA", "campeon": False, "k_noise": 0.20, "m2_noise": 0.25 },
-    
-    # --- GRUPO E ---
-    "Alemania": { "grupo": "E", "ranking": 16, "pib": 48000, "temp": 8.5, "poblacion": 84.0, "confed": "UEFA", "campeon": True, "k_noise": 0.40, "m2_noise": 0.35 },
-    "Curazao": { "grupo": "E", "ranking": 90, "pib": 16000, "temp": 27.5, "poblacion": 0.15, "confed": "CONCACAF", "campeon": False, "k_noise": 0.00, "m2_noise": 0.05 },
-    "Costa de Marfil": { "grupo": "E", "ranking": 38, "pib": 2500, "temp": 26.0, "poblacion": 28.1, "confed": "CAF", "campeon": False, "k_noise": 0.20, "m2_noise": 0.25 },
-    "Ecuador": { "grupo": "E", "ranking": 29, "pib": 6300, "temp": 20.0, "poblacion": 18.0, "confed": "CONMEBOL", "campeon": False, "k_noise": 0.25, "m2_noise": 0.35 },
+st.set_page_config(page_title="World Cup Pro Predictor 2026", page_icon="⚽", layout="wide")
+st.title("⚽ World Cup Pro Predictor 2026")
+st.markdown("### Consola Avanzada de Simulación No Lineal y Control Log Loss")
+st.markdown("---")
 
-    # --- GRUPO F ---
-    "Países Bajos": { "grupo": "F", "ranking": 7, "pib": 57000, "temp": 10.0, "poblacion": 17.8, "confed": "UEFA", "campeon": False, "k_noise": 0.35, "m2_noise": 0.40 },
-    "Japón": { "grupo": "F", "ranking": 18, "pib": 34000, "temp": 11.5, "poblacion": 124.6, "confed": "AFC", "campeon": False, "k_noise": 0.25, "m2_noise": 0.25 },
-    "Suecia": { "grupo": "F", "ranking": 23, "pib": 56000, "temp": 6.5, "poblacion": 10.5, "confed": "UEFA", "campeon": False, "k_noise": 0.20, "m2_noise": 0.25 },
-    "Túnez": { "grupo": "F", "ranking": 41, "pib": 3800, "temp": 19.5, "poblacion": 12.3, "confed": "CAF", "campeon": False, "k_noise": 0.10, "m2_noise": 0.20 },
+# Inicialización segura del Session State
+if "audit_history" not in st.session_state:
+    st.session_state.audit_history = []
+if "partidos_jugados" not in st.session_state:
+    st.session_state.partidos_jugados = {}
 
-    # --- GRUPO G ---
-    "Bélgica": { "grupo": "G", "ranking": 3, "pib": 50000, "temp": 10.0, "poblacion": 11.7, "confed": "UEFA", "campeon": False, "k_noise": 0.35, "m2_noise": 0.35 },
-    "Egipto": { "grupo": "G", "ranking": 33, "pib": 3700, "temp": 22.0, "poblacion": 110.9, "confed": "CAF", "campeon": False, "k_noise": 0.15, "m2_noise": 0.25 },
-    "Irán": { "grupo": "G", "ranking": 20, "pib": 4000, "temp": 18.0, "poblacion": 88.5, "confed": "AFC", "campeon": False, "k_noise": 0.10, "m2_noise": 0.20 },
-    "Nueva Zelanda": { "grupo": "G", "ranking": 103, "pib": 48000, "temp": 10.5, "poblacion": 5.1, "confed": "OFC", "campeon": False, "k_noise": 0.05, "m2_noise": 0.10 },
+tab1, tab2, tab3 = st.tabs([
+    "📅 Calendario y Simulación de Montecarlo",
+    "📊 Registro Real y Análisis de Error",
+    "🏆 Tablas de Posiciones en Vivo"
+])
 
-    # --- GRUPO H ---
-    "España": { "grupo": "H", "ranking": 8, "pib": 30000, "temp": 13.5, "poblacion": 47.5, "confed": "UEFA", "campeon": True, "k_noise": 0.45, "m2_noise": 0.45 },
-    "Cabo Verde": { "grupo": "H", "ranking": 65, "pib": 3900, "temp": 24.0, "poblacion": 0.6, "confed": "CAF", "campeon": False, "k_noise": 0.05, "m2_noise": 0.10 },
-    "Arabia Saudita": { "grupo": "H", "ranking": 53, "pib": 30000, "temp": 25.5, "poblacion": 36.4, "confed": "AFC", "campeon": False, "k_noise": 0.10, "m2_noise": 0.15 },
-    "Uruguay": { "grupo": "H", "ranking": 11, "pib": 20000, "temp": 17.5, "poblacion": 3.4, "confed": "CONMEBOL", "campeon": True, "k_noise": 0.35, "m2_noise": 0.40 },
+# ──────────────────────────────────────────────
+# PESTAÑA 1: MONTECARLO
+# ──────────────────────────────────────────────
+with tab1:
+    st.subheader("🗓️ Selección de Partido desde el Fixture Oficial")
 
-    # --- GRUPO I ---
-    "Francia": { "grupo": "I", "ranking": 2, "pib": 43000, "temp": 11.5, "poblacion": 68.0, "confed": "UEFA", "campeon": True, "k_noise": 0.45, "m2_noise": 0.45 },
-    "Senegal": { "grupo": "I", "ranking": 17, "pib": 1600, "temp": 28.0, "poblacion": 17.3, "confed": "CAF", "campeon": False, "k_noise": 0.25, "m2_noise": 0.30 },
-    "Irak": { "grupo": "I", "ranking": 58, "pib": 4900, "temp": 22.5, "poblacion": 44.5, "confed": "AFC", "campeon": False, "k_noise": 0.10, "m2_noise": 0.15 },
-    "Noruega": { "grupo": "I", "ranking": 47, "pib": 89000, "temp": 2.0, "poblacion": 5.4, "confed": "UEFA", "campeon": False, "k_noise": 0.20, "m2_noise": 0.25 },
-
-    # --- GRUPO J ---
-    "Argentina": { "grupo": "J", "ranking": 1, "pib": 13000, "temp": 15.0, "poblacion": 46.2, "confed": "CONMEBOL", "campeon": True, "k_noise": 0.50, "m2_noise": 0.50 },
-    "Argelia": { "grupo": "J", "ranking": 43, "pib": 4000, "temp": 22.5, "poblacion": 44.9, "confed": "CAF", "campeon": False, "k_noise": 0.15, "m2_noise": 0.15 },
-    "Austria": { "grupo": "J", "ranking": 25, "pib": 52000, "temp": 7.0, "poblacion": 9.0, "confed": "UEFA", "campeon": False, "k_noise": 0.20, "m2_noise": 0.20 },
-    "Jordania": { "grupo": "J", "ranking": 71, "pib": 4300, "temp": 19.0, "poblacion": 11.3, "confed": "AFC", "campeon": False, "k_noise": 0.05, "m2_noise": 0.10 },
-
-    # --- GRUPO K ---
-    "Portugal": { "grupo": "K", "ranking": 6, "pib": 25000, "temp": 15.0, "poblacion": 10.4, "confed": "UEFA", "campeon": False, "k_noise": 0.40, "m2_noise": 0.40 },
-    "República Democrática del Congo": { "grupo": "K", "ranking": 61, "pib": 600, "temp": 24.0, "poblacion": 99.0, "confed": "CAF", "campeon": False, "k_noise": 0.10, "m2_noise": 0.15 },
-    "Uzbekistán": { "grupo": "K", "ranking": 64, "pib": 2300, "temp": 12.0, "poblacion": 36.0, "confed": "AFC", "campeon": False, "k_noise": 0.10, "m2_noise": 0.15 },
-    "Colombia": { "grupo": "K", "ranking": 12, "pib": 6600, "temp": 24.0, "poblacion": 51.8, "confed": "CONMEBOL", "campeon": False, "k_noise": 0.30, "m2_noise": 0.40 },
-
-    # --- GRUPO L ---
-    "Inglaterra": { "grupo": "L", "ranking": 4, "pib": 46000, "temp": 9.5, "poblacion": 56.5, "confed": "UEFA", "campeon": True, "k_noise": 0.40, "m2_noise": 0.40 },
-    "Croacia": { "grupo": "L", "ranking": 10, "pib": 20000, "temp": 12.0, "poblacion": 3.8, "confed": "UEFA", "campeon": False, "k_noise": 0.30, "m2_noise": 0.25 },
-    "Ghana": { "grupo": "L", "ranking": 60, "pib": 2200, "temp": 27.0, "poblacion": 33.5, "confed": "CAF", "campeon": False, "k_noise": 0.15, "m2_noise": 0.20 },
-    "Panamá": { "grupo": "L", "ranking": 43, "pib": 18000, "temp": 27.0, "poblacion": 4.4, "confed": "CONCACAF", "campeon": False, "k_noise": 0.10, "m2_noise": 0.20 }
-}
-
-# GENERACIÓN MATEMÁTICA EXACTA DE ENFRENTAMIENTOS ROUND-ROBIN POR GRUPO (72 PARTIDOS)
-FIXTURE = []
-match_id = 1
-grupos = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"]
-
-for g in grupos:
-    eq_g = [name for name, info in TEAMS.items() if info["grupo"] == g]
-    
-    # Cruces oficiales estandarizados por la FIFA para las 3 jornadas de grupo
-    cruces = [
-        (eq_g[0], eq_g[1]), (eq_g[2], eq_g[3]),  # Jornada 1
-        (eq_g[0], eq_g[2]), (eq_g[3], eq_g[1]),  # Jornada 2
-        (eq_g[3], eq_g[0]), (eq_g[1], eq_g[2])   # Jornada 3
+    fixture_options = [
+        f"Partido {p['id']} [{p['fase']}]: {p['local']} vs. {p['visitante']}"
+        for p in data.FIXTURE
     ]
-    
-    for local, visitante in cruces:
-        FIXTURE.append({
-            "id": match_id,
-            "grupo": g,
-            "fase": f"Grupo {g}",
-            "local": local,
-            "visitante": visitante
-        })
-        match_id += 1
+    selected_match_str = st.selectbox("Elige un enfrentamiento:", fixture_options)
+
+    try:
+        match_id = int(selected_match_str.split("Partido ")[1].split(" [")[0])
+        match_data = next(p for p in data.FIXTURE if p["id"] == match_id)
+        team_a = match_data["local"]
+        team_b = match_data["visitante"]
+        fase_actual = match_data["fase"]
+        a = data.TEAMS[team_a]
+        b = data.TEAMS[team_b]
+    except Exception as e:
+        st.error(f"Error al procesar el fixture: {e}")
+        st.stop()
+
+    lk_a = engines.engine_klement(a, b["confed"], es_local=True)
+    lk_b = engines.engine_klement(b, a["confed"], es_local=False)
+    lg_a = engines.engine_model_two(a, b["confed"], es_local=True)
+    lg_b = engines.engine_model_two(b, a["confed"], es_local=False)
+
+    usar_calibrador = st.checkbox(
+        "🔬 Activar Calibrador Bayesiano (ajusta con tendencia real del torneo)",
+        value=len(st.session_state.partidos_jugados) >= 3
+    )
+
+    if st.button("🎲 Correr 10,000 Simulaciones de Montecarlo"):
+        if usar_calibrador and len(st.session_state.partidos_jugados) >= 1:
+            resultados = calibrador.recalcular_con_tendencia_real(
+                match_id, st.session_state.partidos_jugados,
+                lk_a, lk_b, lg_a, lg_b
+            )
+        else:
+            resultados = engines.ejecutar_montecarlo(lk_a, lk_b, lg_a, lg_b)
+
+        st.session_state.update(resultados)
+        st.session_state.active_match = f"{team_a} vs. {team_b}"
+        st.session_state.active_id = match_id
+        st.session_state.active_fase = fase_actual
+
+    if st.session_state.get("active_match") == f"{team_a} vs. {team_b}":
+        st.markdown(f"### 📊 Probabilidades Estocásticas: *{team_a} vs. {team_b}*")
+        c1, c2 = st.columns(2)
+        with c1:
+            st.info("📐 *Modelo 1: Joachim Klement (Econometría)*")
+            st.metric(f"🏆 Victoria {team_a}", f"{st.session_state.pk_a:.1f}%")
+            st.metric("🤝 Empate",              f"{st.session_state.pk_emp:.1f}%")
+            st.metric(f"🏆 Victoria {team_b}", f"{st.session_state.pk_b:.1f}%")
+        with c2:
+            st.success("📊 *Modelo 2: Ajuste Alternativo Integrado*")
+            st.metric(f"🏆 Victoria {team_a}", f"{st.session_state.pg_a:.1f}%")
+            st.metric("🤝 Empate",              f"{st.session_state.pg_emp:.1f}%")
+            st.metric(f"🏆 Victoria {team_b}", f"{st.session_state.pg_b:.1f}%")
+
+        # Barra visual de probabilidades
+        st.markdown("#### Distribución visual de probabilidades")
+        prob_df = pd.DataFrame({
+            "Resultado": [f"Victoria {team_a}", "Empate", f"Victoria {team_b}"],
+            "Klement (%)": [
+                round(st.session_state.pk_a, 1),
+                round(st.session_state.pk_emp, 1),
+                round(st.session_state.pk_b, 1)
+            ],
+            "Modelo 2 (%)": [
+                round(st.session_state.pg_a, 1),
+                round(st.session_state.pg_emp, 1),
+                round(st.session_state.pg_b, 1)
+            ]
+        }).set_index("Resultado")
+        st.bar_chart(prob_df)
+
+# ──────────────────────────────────────────────
+# PESTAÑA 2: REGISTRO REAL Y LOG LOSS
+# ──────────────────────────────────────────────
+with tab2:
+    st.subheader("📝 Cargar Marcador Oficial de Campo")
+
+    if "active_match" in st.session_state:
+        local_name, visitante_name = st.session_state.active_match.split(" vs. ")
+        col_g1, col_g2 = st.columns(2)
+        with col_g1:
+            goles_a = st.number_input(f"⚽ Goles de {local_name}",    min_value=0, step=1, key="g_r_a")
+        with col_g2:
+            goles_b = st.number_input(f"⚽ Goles de {visitante_name}", min_value=0, step=1, key="g_r_b")
+
+        if st.button("💾 Computar Desviaciones y Log Loss"):
+            y_real = 1.0 if goles_a > goles_b else (0.5 if goles_a == goles_b else 0.0)
+
+            p_k = (
+                st.session_state.pk_a  / 100 if y_real == 1.0 else
+                st.session_state.pk_emp / 100 if y_real == 0.5 else
+                st.session_state.pk_b  / 100
+            )
+            p_g = (
+                st.session_state.pg_a  / 100 if y_real == 1.0 else
+                st.session_state.pg_emp / 100 if y_real == 0.5 else
+                st.session_state.pg_b  / 100
+            )
+
+            log_loss_k = -np.log(max(0.01, p_k))
+            log_loss_g = -np.log(max(0.01, p_g))
+            letra_grupo = st.session_state.active_fase.replace("Grupo ", "").strip()
+
+            st.session_state.partidos_jugados[st.session_state.active_id] = {
+                "local":    local_name,
+                "visitante": visitante_name,
+                "goles_l":  int(goles_a),
+                "goles_v":  int(goles_b),
+                "grupo":    letra_grupo,
+            }
+            st.session_state.audit_history.append({
+                "Partido":          st.session_state.active_match,
+                "Resultado":        f"{goles_a} - {goles_b}",
+                "Log Loss Klement": round(log_loss_k, 3),
+                "Log Loss Modelo 2": round(log_loss_g, 3),
+            })
+
+            resultado_txt = (
+                f"🏆 {local_name} gana" if goles_a > goles_b else
+                f"🏆 {visitante_name} gana" if goles_b > goles_a else
+                "🤝 Empate"
+            )
+            st.success(f"¡Guardado! {local_name} {goles_a} – {goles_b} {visitante_name}  →  {resultado_txt}")
+            st.info(f"Log Loss Klement: **{log_loss_k:.3f}** | Log Loss Modelo 2: **{log_loss_g:.3f}**")
+
+    else:
+        st.info("ℹ️ Primero corre una simulación en la pestaña 1.")
+
+    st.markdown("### 📋 Historial de Auditoría de Modelos")
+    if st.session_state.audit_history:
+        df_audit = pd.DataFrame(st.session_state.audit_history)
+        st.dataframe(df_audit, use_container_width=True)
+
+        # Promedio global de Log Loss
+        avg_k = df_audit["Log Loss Klement"].mean()
+        avg_g = df_audit["Log Loss Modelo 2"].mean()
+        col_a, col_b = st.columns(2)
+        col_a.metric("📉 Log Loss promedio Klement", f"{avg_k:.3f}")
+        col_b.metric("📉 Log Loss promedio Modelo 2", f"{avg_g:.3f}")
+
+        mejor = "Klement" if avg_k < avg_g else "Modelo 2"
+        st.success(f"✅ Modelo con menor error acumulado: **{mejor}**")
+    else:
+        st.info("ℹ️ Aún no hay partidos registrados.")
+
+# ──────────────────────────────────────────────
+# PESTAÑA 3: TABLAS DE POSICIONES
+# ──────────────────────────────────────────────
+with tab3:
+    st.subheader("🏆 Posiciones Reales Actualizadas de la Fase de Grupos")
+
+    grupos_disponibles = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"]
+    cols = st.columns(2)
+
+    for i, g in enumerate(grupos_disponibles):
+        df_grupo = utils.calcular_tabla_grupo(g, st.session_state.partidos_jugados)
+        if df_grupo is not None:
+            with cols[i % 2]:
+                st.markdown(f"#### 🗂️ Grupo {g}")
+                # Resaltar los 2 primeros (clasificados directos)
+                st.dataframe(
+                    df_grupo.style.apply(
+                        lambda row: [
+                            "background-color: #d4edda" if row.name <= 2 else
+                            "background-color: #fff3cd" if row.name == 3 else ""
+                        ] * len(row),
+                        axis=1
+                    ),
+                    use_container_width=True
+                )
+
+    if not st.session_state.partidos_jugados:
+        st.info("ℹ️ Las tablas se actualizarán automáticamente al registrar resultados en la pestaña 2.")
