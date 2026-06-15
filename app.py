@@ -73,10 +73,40 @@ with tab1:
         else:
             lk_a2, lk_b2, lg_a2, lg_b2 = lk_a, lk_b, lg_a, lg_b
 
-        res = engines.ejecutar_montecarlo(
-            lk_a2, lk_b2, lg_a2, lg_b2,
-            audit_history=st.session_state.audit_history,
-        )
+        import inspect
+        _mc_params = inspect.signature(engines.ejecutar_montecarlo).parameters
+        if "audit_history" in _mc_params:
+            res = engines.ejecutar_montecarlo(
+                lk_a2, lk_b2, lg_a2, lg_b2,
+                audit_history=st.session_state.audit_history,
+            )
+        else:
+            # engines.py viejo: fusión manual aquí
+            res_raw = engines.ejecutar_montecarlo(lk_a2, lk_b2, lg_a2, lg_b2)
+            import scipy.stats as _stats
+            from collections import Counter as _Counter
+            import numpy as _np
+            _n = 10000
+            _mu_a = 0.5 * lk_a2 + 0.5 * lg_a2
+            _mu_b = 0.5 * lk_b2 + 0.5 * lg_b2
+            _sa = _stats.poisson.rvs(mu=_mu_a, size=_n)
+            _sb = _stats.poisson.rvs(mu=_mu_b, size=_n)
+            _pf_a   = float(_np.sum(_sa > _sb) / _n) * 100
+            _pf_emp = float(_np.sum(_sa == _sb) / _n) * 100
+            _pf_b   = float(_np.sum(_sb > _sa) / _n) * 100
+            _s = _pf_a + _pf_emp + _pf_b
+            _top5 = _Counter(zip(_sa.tolist(), _sb.tolist())).most_common(5)
+            res = {
+                **res_raw,
+                "pf_a":   (_pf_a / _s) * 100,
+                "pf_emp": (_pf_emp / _s) * 100,
+                "pf_b":   (_pf_b / _s) * 100,
+                "w_k": 50.0, "w_g": 50.0,
+                "mu_a": round(_mu_a, 3), "mu_b": round(_mu_b, 3),
+                "marcador_prob":   _top5[0][0],
+                "marcador_prob_p": round(_top5[0][1] / _n * 100, 1),
+                "top5_marcadores": _top5,
+            }
         st.session_state.update(res)
         st.session_state.active_match = f"{team_a} vs. {team_b}"
         st.session_state.active_id    = match_id
