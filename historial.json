@@ -41,6 +41,13 @@
       "goles_l": 1,
       "goles_v": 1,
       "grupo": "C"
+    },
+    "14": {
+      "local": "Haití",
+      "visitante": "Escocia",
+      "goles_l": 0,
+      "goles_v": 1,
+      "grupo": "C"
     }
   },
   "audit_history": [
@@ -97,6 +104,15 @@
       "Log Loss Klement": 2.071,
       "Log Loss Modelo 2": 2.1,
       "Log Loss Fusión": 1.374
+    },
+    {
+      "Partido": "Haití vs. Escocia",
+      "Real": "0–1",
+      "Pred. Marcador": "0–5",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.301,
+      "Log Loss Modelo 2": 0.247,
+      "Log Loss Fusión": 0.197
     }
   ],
   "fuerzas": {
@@ -141,12 +157,12 @@
       "defensa": 1.1389999999999998
     },
     "Haití": {
-      "ataque": 1.202,
-      "defensa": 0.738
+      "ataque": 1.1425,
+      "defensa": 0.33799999999999997
     },
     "Escocia": {
-      "ataque": 1.998,
-      "defensa": 1.287
+      "ataque": 1.5979999999999999,
+      "defensa": 1.2275
     },
     "Estados Unidos": {
       "ataque": 2.4019999999999997,
