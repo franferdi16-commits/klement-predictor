@@ -1,0 +1,280 @@
+{
+  "partidos_jugados": {
+    "1": {
+      "local": "México",
+      "visitante": "Sudáfrica",
+      "goles_l": 2,
+      "goles_v": 0,
+      "grupo": "A"
+    },
+    "2": {
+      "local": "República de Corea",
+      "visitante": "República Checa",
+      "goles_l": 2,
+      "goles_v": 1,
+      "grupo": "A"
+    },
+    "7": {
+      "local": "Canadá",
+      "visitante": "Bosnia y Herzegovina",
+      "goles_l": 1,
+      "goles_v": 1,
+      "grupo": "B"
+    },
+    "19": {
+      "local": "Estados Unidos",
+      "visitante": "Paraguay",
+      "goles_l": 4,
+      "goles_v": 1,
+      "grupo": "D"
+    },
+    "8": {
+      "local": "Catar",
+      "visitante": "Suiza",
+      "goles_l": 1,
+      "goles_v": 1,
+      "grupo": "B"
+    }
+  },
+  "audit_history": [
+    {
+      "Partido": "México vs. Sudáfrica",
+      "Real": "2–0",
+      "Pred. Marcador": "3–1",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.494,
+      "Log Loss Modelo 2": 0.204,
+      "Log Loss Fusión": 0.494
+    },
+    {
+      "Partido": "República de Corea vs. República Checa",
+      "Real": "2–1",
+      "Pred. Marcador": "5–3",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.543,
+      "Log Loss Modelo 2": 0.538,
+      "Log Loss Fusión": 0.481
+    },
+    {
+      "Partido": "Canadá vs. Bosnia y Herzegovina",
+      "Real": "1–1",
+      "Pred. Marcador": "4–1",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 1.392,
+      "Log Loss Modelo 2": 1.776,
+      "Log Loss Fusión": 2.988
+    },
+    {
+      "Partido": "Estados Unidos vs. Paraguay",
+      "Real": "4–1",
+      "Pred. Marcador": "5–1",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.385,
+      "Log Loss Modelo 2": 0.253,
+      "Log Loss Fusión": 0.32
+    },
+    {
+      "Partido": "Catar vs. Suiza",
+      "Real": "1–1",
+      "Pred. Marcador": "4–4",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 1.757,
+      "Log Loss Modelo 2": 1.807,
+      "Log Loss Fusión": 2.034
+    }
+  ],
+  "fuerzas": {
+    "México": {
+      "ataque": 2.53,
+      "defensa": 1.665
+    },
+    "Sudáfrica": {
+      "ataque": 1.638,
+      "defensa": 1.062
+    },
+    "República de Corea": {
+      "ataque": 1.954,
+      "defensa": 1.2424
+    },
+    "República Checa": {
+      "ataque": 1.7634,
+      "defensa": 1.023
+    },
+    "Canadá": {
+      "ataque": 1.4223000000000001,
+      "defensa": 1.2276
+    },
+    "Bosnia y Herzegovina": {
+      "ataque": 1.3106,
+      "defensa": 0.4743
+    },
+    "Catar": {
+      "ataque": 1.7474,
+      "defensa": 0.947
+    },
+    "Suiza": {
+      "ataque": 1.9330000000000003,
+      "defensa": 1.1714
+    },
+    "Brasil": {
+      "ataque": 2.735,
+      "defensa": 1.62
+    },
+    "Marruecos": {
+      "ataque": 2.541,
+      "defensa": 1.539
+    },
+    "Haití": {
+      "ataque": 1.202,
+      "defensa": 0.738
+    },
+    "Escocia": {
+      "ataque": 1.998,
+      "defensa": 1.287
+    },
+    "Estados Unidos": {
+      "ataque": 2.4019999999999997,
+      "defensa": 1.6165
+    },
+    "Paraguay": {
+      "ataque": 1.7605000000000002,
+      "defensa": 0.953
+    },
+    "Australia": {
+      "ataque": 2.243,
+      "defensa": 1.467
+    },
+    "Turquía": {
+      "ataque": 2.005,
+      "defensa": 1.26
+    },
+    "Alemania": {
+      "ataque": 2.487,
+      "defensa": 1.488
+    },
+    "Curazao": {
+      "ataque": 1.005,
+      "defensa": 0.72
+    },
+    "Costa de Marfil": {
+      "ataque": 2.041,
+      "defensa": 1.284
+    },
+    "Ecuador": {
+      "ataque": 2.253,
+      "defensa": 1.377
+    },
+    "Países Bajos": {
+      "ataque": 2.674,
+      "defensa": 1.611
+    },
+    "Japón": {
+      "ataque": 2.401,
+      "defensa": 1.509
+    },
+    "Suecia": {
+      "ataque": 2.311,
+      "defensa": 1.464
+    },
+    "Túnez": {
+      "ataque": 1.962,
+      "defensa": 1.278
+    },
+    "Bélgica": {
+      "ataque": 2.721,
+      "defensa": 1.659
+    },
+    "Irán": {
+      "ataque": 2.34,
+      "defensa": 1.53
+    },
+    "Egipto": {
+      "ataque": 2.131,
+      "defensa": 1.359
+    },
+    "Nueva Zelanda": {
+      "ataque": 0.796,
+      "defensa": 0.549
+    },
+    "España": {
+      "ataque": 2.681,
+      "defensa": 1.569
+    },
+    "Uruguay": {
+      "ataque": 2.602,
+      "defensa": 1.563
+    },
+    "Arabia Saudita": {
+      "ataque": 1.721,
+      "defensa": 1.134
+    },
+    "Cabo Verde": {
+      "ataque": 1.48,
+      "defensa": 1.005
+    },
+    "Francia": {
+      "ataque": 2.789,
+      "defensa": 1.641
+    },
+    "Senegal": {
+      "ataque": 2.444,
+      "defensa": 1.521
+    },
+    "Noruega": {
+      "ataque": 1.879,
+      "defensa": 1.176
+    },
+    "Irak": {
+      "ataque": 1.631,
+      "defensa": 1.074
+    },
+    "Argentina": {
+      "ataque": 2.832,
+      "defensa": 1.638
+    },
+    "Austria": {
+      "ataque": 2.25,
+      "defensa": 1.44
+    },
+    "Argelia": {
+      "ataque": 1.901,
+      "defensa": 1.239
+    },
+    "Jordania": {
+      "ataque": 1.372,
+      "defensa": 0.933
+    },
+    "Portugal": {
+      "ataque": 2.692,
+      "defensa": 1.608
+    },
+    "Colombia": {
+      "ataque": 2.584,
+      "defensa": 1.566
+    },
+    "Uzbekistán": {
+      "ataque": 1.523,
+      "defensa": 1.002
+    },
+    "República Democrática del Congo": {
+      "ataque": 1.577,
+      "defensa": 1.038
+    },
+    "Inglaterra": {
+      "ataque": 2.728,
+      "defensa": 1.632
+    },
+    "Croacia": {
+      "ataque": 2.545,
+      "defensa": 1.59
+    },
+    "Ghana": {
+      "ataque": 1.62,
+      "defensa": 1.035
+    },
+    "Panamá": {
+      "ataque": 1.926,
+      "defensa": 1.254
+    }
+  }
+}
