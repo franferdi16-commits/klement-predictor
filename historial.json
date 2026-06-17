@@ -76,6 +76,13 @@
       "goles_l": 1,
       "goles_v": 0,
       "grupo": "E"
+    },
+    "32": {
+      "local": "Suecia",
+      "visitante": "Túnez",
+      "goles_l": 5,
+      "goles_v": 1,
+      "grupo": "F"
     }
   },
   "audit_history": [
@@ -177,6 +184,15 @@
       "Log Loss Klement": 0.794,
       "Log Loss Modelo 2": 0.95,
       "Log Loss Fusión": 1.149
+    },
+    {
+      "Partido": "Suecia vs. Túnez",
+      "Real": "5–1",
+      "Pred. Marcador": "4–2",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.427,
+      "Log Loss Modelo 2": 0.384,
+      "Log Loss Fusión": 0.537
     }
   ],
   "fuerzas": {
@@ -270,10 +286,10 @@
     },
     "Suecia": {
       "ataque": 2.311,
-      "defensa": 1.464
+      "defensa": 1.252
     },
     "Túnez": {
-      "ataque": 1.962,
+      "ataque": 1.75,
       "defensa": 1.278
     },
     "Bélgica": {
