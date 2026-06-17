@@ -55,6 +55,13 @@
       "goles_l": 2,
       "goles_v": 0,
       "grupo": "D"
+    },
+    "25": {
+      "local": "Alemania",
+      "visitante": "Curazao",
+      "goles_l": 7,
+      "goles_v": 1,
+      "grupo": "E"
     }
   },
   "audit_history": [
@@ -129,6 +136,15 @@
       "Log Loss Klement": 0.485,
       "Log Loss Modelo 2": 0.501,
       "Log Loss Fusión": 0.584
+    },
+    {
+      "Partido": "Alemania vs. Curazao",
+      "Real": "7–1",
+      "Pred. Marcador": "4–0",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.052,
+      "Log Loss Modelo 2": 0.054,
+      "Log Loss Fusión": 0.183
     }
   ],
   "fuerzas": {
@@ -197,12 +213,12 @@
       "defensa": 0.96
     },
     "Alemania": {
-      "ataque": 2.487,
-      "defensa": 1.488
+      "ataque": 2.6870000000000003,
+      "defensa": 1.5538
     },
     "Curazao": {
-      "ataque": 1.005,
-      "defensa": 0.72
+      "ataque": 1.0708,
+      "defensa": 0.9199999999999999
     },
     "Costa de Marfil": {
       "ataque": 2.041,
