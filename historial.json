@@ -132,6 +132,13 @@
       "goles_l": 1,
       "goles_v": 3,
       "grupo": "J"
+    },
+    "65": {
+      "local": "República Democrática del Congo",
+      "visitante": "Portugal",
+      "goles_l": 1,
+      "goles_v": 1,
+      "grupo": "K"
     }
   },
   "audit_history": [
@@ -305,6 +312,15 @@
       "Log Loss Klement": 0.383,
       "Log Loss Modelo 2": 0.311,
       "Log Loss Fusión": 0.26
+    },
+    {
+      "Partido": "República Democrática del Congo vs. Portugal",
+      "Real": "1–1",
+      "Pred. Marcador": "1–4",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 1.749,
+      "Log Loss Modelo 2": 2.008,
+      "Log Loss Fusión": 1.546
     }
   ],
   "fuerzas": {
@@ -469,8 +485,8 @@
       "defensa": 0.7330000000000001
     },
     "Portugal": {
-      "ataque": 2.692,
-      "defensa": 1.608
+      "ataque": 2.2920000000000003,
+      "defensa": 1.5344000000000002
     },
     "Colombia": {
       "ataque": 2.584,
@@ -481,8 +497,8 @@
       "defensa": 1.002
     },
     "República Democrática del Congo": {
-      "ataque": 1.577,
-      "defensa": 1.038
+      "ataque": 1.5034,
+      "defensa": 0.638
     },
     "Inglaterra": {
       "ataque": 2.728,
