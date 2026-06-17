@@ -34,6 +34,13 @@
       "goles_l": 1,
       "goles_v": 1,
       "grupo": "B"
+    },
+    "13": {
+      "local": "Brasil",
+      "visitante": "Marruecos",
+      "goles_l": 1,
+      "goles_v": 1,
+      "grupo": "C"
     }
   },
   "audit_history": [
@@ -81,6 +88,15 @@
       "Log Loss Klement": 1.757,
       "Log Loss Modelo 2": 1.807,
       "Log Loss Fusión": 2.034
+    },
+    {
+      "Partido": "Brasil vs. Marruecos",
+      "Real": "1–1",
+      "Pred. Marcador": "5–5",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 2.071,
+      "Log Loss Modelo 2": 2.1,
+      "Log Loss Fusión": 1.374
     }
   ],
   "fuerzas": {
@@ -117,12 +133,12 @@
       "defensa": 1.1714
     },
     "Brasil": {
-      "ataque": 2.735,
-      "defensa": 1.62
+      "ataque": 2.335,
+      "defensa": 1.2200000000000002
     },
     "Marruecos": {
-      "ataque": 2.541,
-      "defensa": 1.539
+      "ataque": 2.141,
+      "defensa": 1.1389999999999998
     },
     "Haití": {
       "ataque": 1.202,
