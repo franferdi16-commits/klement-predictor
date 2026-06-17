@@ -139,6 +139,13 @@
       "goles_l": 1,
       "goles_v": 1,
       "grupo": "K"
+    },
+    "67": {
+      "local": "Inglaterra",
+      "visitante": "Croacia",
+      "goles_l": 4,
+      "goles_v": 2,
+      "grupo": "L"
     }
   },
   "audit_history": [
@@ -321,6 +328,15 @@
       "Log Loss Klement": 1.749,
       "Log Loss Modelo 2": 2.008,
       "Log Loss Fusión": 1.546
+    },
+    {
+      "Partido": "Inglaterra vs. Croacia",
+      "Real": "4–2",
+      "Pred. Marcador": "4–4",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.334,
+      "Log Loss Modelo 2": 0.507,
+      "Log Loss Fusión": 0.989
     }
   ],
   "fuerzas": {
@@ -501,12 +517,12 @@
       "defensa": 0.638
     },
     "Inglaterra": {
-      "ataque": 2.728,
-      "defensa": 1.632
+      "ataque": 2.628,
+      "defensa": 1.3319999999999999
     },
     "Croacia": {
-      "ataque": 2.545,
-      "defensa": 1.59
+      "ataque": 2.245,
+      "defensa": 1.49
     },
     "Ghana": {
       "ataque": 1.62,
