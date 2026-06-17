@@ -104,6 +104,13 @@
       "goles_l": 2,
       "goles_v": 2,
       "grupo": "G"
+    },
+    "49": {
+      "local": "Francia",
+      "visitante": "Senegal",
+      "goles_l": 3,
+      "goles_v": 1,
+      "grupo": "I"
     }
   },
   "audit_history": [
@@ -241,6 +248,15 @@
       "Log Loss Klement": 2.137,
       "Log Loss Modelo 2": 2.61,
       "Log Loss Fusión": 1.82
+    },
+    {
+      "Partido": "Francia vs. Senegal",
+      "Real": "3–1",
+      "Pred. Marcador": "4–4",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.244,
+      "Log Loss Modelo 2": 0.329,
+      "Log Loss Fusión": 0.869
     }
   ],
   "fuerzas": {
@@ -373,12 +389,12 @@
       "defensa": 0.5049999999999999
     },
     "Francia": {
-      "ataque": 2.789,
-      "defensa": 1.641
+      "ataque": 2.589,
+      "defensa": 1.2885
     },
     "Senegal": {
-      "ataque": 2.444,
-      "defensa": 1.521
+      "ataque": 2.0915,
+      "defensa": 1.321
     },
     "Noruega": {
       "ataque": 1.879,
