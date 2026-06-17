@@ -97,6 +97,13 @@
       "goles_l": 1,
       "goles_v": 1,
       "grupo": "H"
+    },
+    "40": {
+      "local": "Nueva Zelanda",
+      "visitante": "Irán",
+      "goles_l": 2,
+      "goles_v": 2,
+      "grupo": "G"
     }
   },
   "audit_history": [
@@ -225,6 +232,15 @@
       "Log Loss Klement": 2.172,
       "Log Loss Modelo 2": 2.294,
       "Log Loss Fusión": 1.441
+    },
+    {
+      "Partido": "Nueva Zelanda vs. Irán",
+      "Real": "2–2",
+      "Pred. Marcador": "0–5",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 2.137,
+      "Log Loss Modelo 2": 2.61,
+      "Log Loss Fusión": 1.82
     }
   ],
   "fuerzas": {
@@ -329,16 +345,16 @@
       "defensa": 1.659
     },
     "Irán": {
-      "ataque": 2.34,
-      "defensa": 1.53
+      "ataque": 2.04,
+      "defensa": 1.71
     },
     "Egipto": {
       "ataque": 2.131,
       "defensa": 1.359
     },
     "Nueva Zelanda": {
-      "ataque": 0.796,
-      "defensa": 0.549
+      "ataque": 0.9760000000000001,
+      "defensa": 0.249
     },
     "España": {
       "ataque": 2.181,
