@@ -90,6 +90,13 @@
       "goles_l": 0,
       "goles_v": 0,
       "grupo": "H"
+    },
+    "48": {
+      "local": "Uruguay",
+      "visitante": "Arabia Saudita",
+      "goles_l": 1,
+      "goles_v": 1,
+      "grupo": "H"
     }
   },
   "audit_history": [
@@ -209,6 +216,15 @@
       "Log Loss Klement": 1.713,
       "Log Loss Modelo 2": 2.135,
       "Log Loss Fusión": 1.615
+    },
+    {
+      "Partido": "Uruguay vs. Arabia Saudita",
+      "Real": "1–1",
+      "Pred. Marcador": "4–2",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 2.172,
+      "Log Loss Modelo 2": 2.294,
+      "Log Loss Fusión": 1.441
     }
   ],
   "fuerzas": {
@@ -329,12 +345,12 @@
       "defensa": 1.4279
     },
     "Uruguay": {
-      "ataque": 2.602,
-      "defensa": 1.563
+      "ataque": 2.202,
+      "defensa": 1.432
     },
     "Arabia Saudita": {
-      "ataque": 1.721,
-      "defensa": 1.134
+      "ataque": 1.59,
+      "defensa": 0.7339999999999999
     },
     "Cabo Verde": {
       "ataque": 1.3389,
