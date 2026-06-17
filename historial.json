@@ -69,6 +69,13 @@
       "goles_l": 2,
       "goles_v": 2,
       "grupo": "F"
+    },
+    "26": {
+      "local": "Costa de Marfil",
+      "visitante": "Ecuador",
+      "goles_l": 1,
+      "goles_v": 0,
+      "grupo": "E"
     }
   },
   "audit_history": [
@@ -161,6 +168,15 @@
       "Log Loss Klement": 2.03,
       "Log Loss Modelo 2": 2.112,
       "Log Loss Fusión": 1.33
+    },
+    {
+      "Partido": "Costa de Marfil vs. Ecuador",
+      "Real": "1–0",
+      "Pred. Marcador": "4–4",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.794,
+      "Log Loss Modelo 2": 0.95,
+      "Log Loss Fusión": 1.149
     }
   ],
   "fuerzas": {
@@ -237,12 +253,12 @@
       "defensa": 0.9199999999999999
     },
     "Costa de Marfil": {
-      "ataque": 2.041,
-      "defensa": 1.284
+      "ataque": 1.7157,
+      "defensa": 0.8099000000000001
     },
     "Ecuador": {
-      "ataque": 2.253,
-      "defensa": 1.377
+      "ataque": 1.7789000000000001,
+      "defensa": 1.0516999999999999
     },
     "Países Bajos": {
       "ataque": 2.3739999999999997,
