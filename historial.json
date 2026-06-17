@@ -62,6 +62,13 @@
       "goles_l": 7,
       "goles_v": 1,
       "grupo": "E"
+    },
+    "31": {
+      "local": "Países Bajos",
+      "visitante": "Japón",
+      "goles_l": 2,
+      "goles_v": 2,
+      "grupo": "F"
     }
   },
   "audit_history": [
@@ -145,6 +152,15 @@
       "Log Loss Klement": 0.052,
       "Log Loss Modelo 2": 0.054,
       "Log Loss Fusión": 0.183
+    },
+    {
+      "Partido": "Países Bajos vs. Japón",
+      "Real": "2–2",
+      "Pred. Marcador": "5–4",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 2.03,
+      "Log Loss Modelo 2": 2.112,
+      "Log Loss Fusión": 1.33
     }
   ],
   "fuerzas": {
@@ -229,12 +245,12 @@
       "defensa": 1.377
     },
     "Países Bajos": {
-      "ataque": 2.674,
-      "defensa": 1.611
+      "ataque": 2.3739999999999997,
+      "defensa": 1.311
     },
     "Japón": {
-      "ataque": 2.401,
-      "defensa": 1.509
+      "ataque": 2.101,
+      "defensa": 1.2089999999999999
     },
     "Suecia": {
       "ataque": 2.311,
