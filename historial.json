@@ -125,6 +125,13 @@
       "goles_l": 3,
       "goles_v": 0,
       "grupo": "J"
+    },
+    "58": {
+      "local": "Jordania",
+      "visitante": "Austria",
+      "goles_l": 1,
+      "goles_v": 3,
+      "grupo": "J"
     }
   },
   "audit_history": [
@@ -289,6 +296,15 @@
       "Log Loss Klement": 0.15,
       "Log Loss Modelo 2": 0.197,
       "Log Loss Fusión": 0.444
+    },
+    {
+      "Partido": "Jordania vs. Austria",
+      "Real": "1–3",
+      "Pred. Marcador": "1–4",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.383,
+      "Log Loss Modelo 2": 0.311,
+      "Log Loss Fusión": 0.26
     }
   ],
   "fuerzas": {
@@ -441,16 +457,16 @@
       "defensa": 1.3792999999999997
     },
     "Austria": {
-      "ataque": 2.25,
-      "defensa": 1.44
+      "ataque": 2.05,
+      "defensa": 1.4133
     },
     "Argelia": {
       "ataque": 1.6423,
       "defensa": 1.0390000000000001
     },
     "Jordania": {
-      "ataque": 1.372,
-      "defensa": 0.933
+      "ataque": 1.3453000000000002,
+      "defensa": 0.7330000000000001
     },
     "Portugal": {
       "ataque": 2.692,
