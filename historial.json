@@ -83,6 +83,13 @@
       "goles_l": 5,
       "goles_v": 1,
       "grupo": "F"
+    },
+    "47": {
+      "local": "Cabo Verde",
+      "visitante": "España",
+      "goles_l": 0,
+      "goles_v": 0,
+      "grupo": "H"
     }
   },
   "audit_history": [
@@ -193,6 +200,15 @@
       "Log Loss Klement": 0.427,
       "Log Loss Modelo 2": 0.384,
       "Log Loss Fusión": 0.537
+    },
+    {
+      "Partido": "Cabo Verde vs. España",
+      "Real": "0–0",
+      "Pred. Marcador": "1–4",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 1.713,
+      "Log Loss Modelo 2": 2.135,
+      "Log Loss Fusión": 1.615
     }
   ],
   "fuerzas": {
@@ -309,8 +325,8 @@
       "defensa": 0.549
     },
     "España": {
-      "ataque": 2.681,
-      "defensa": 1.569
+      "ataque": 2.181,
+      "defensa": 1.4279
     },
     "Uruguay": {
       "ataque": 2.602,
@@ -321,8 +337,8 @@
       "defensa": 1.134
     },
     "Cabo Verde": {
-      "ataque": 1.48,
-      "defensa": 1.005
+      "ataque": 1.3389,
+      "defensa": 0.5049999999999999
     },
     "Francia": {
       "ataque": 2.789,
