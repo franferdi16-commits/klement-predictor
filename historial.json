@@ -118,6 +118,13 @@
       "goles_l": 4,
       "goles_v": 1,
       "grupo": "I"
+    },
+    "57": {
+      "local": "Argentina",
+      "visitante": "Argelia",
+      "goles_l": 3,
+      "goles_v": 0,
+      "grupo": "J"
     }
   },
   "audit_history": [
@@ -273,6 +280,15 @@
       "Log Loss Klement": 0.607,
       "Log Loss Modelo 2": 0.57,
       "Log Loss Fusión": 0.44
+    },
+    {
+      "Partido": "Argentina vs. Argelia",
+      "Real": "3–0",
+      "Pred. Marcador": "4–2",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.15,
+      "Log Loss Modelo 2": 0.197,
+      "Log Loss Fusión": 0.444
     }
   ],
   "fuerzas": {
@@ -421,16 +437,16 @@
       "defensa": 1.0078
     },
     "Argentina": {
-      "ataque": 2.832,
-      "defensa": 1.638
+      "ataque": 2.6319999999999997,
+      "defensa": 1.3792999999999997
     },
     "Austria": {
       "ataque": 2.25,
       "defensa": 1.44
     },
     "Argelia": {
-      "ataque": 1.901,
-      "defensa": 1.239
+      "ataque": 1.6423,
+      "defensa": 1.0390000000000001
     },
     "Jordania": {
       "ataque": 1.372,
