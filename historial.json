@@ -111,6 +111,13 @@
       "goles_l": 3,
       "goles_v": 1,
       "grupo": "I"
+    },
+    "50": {
+      "local": "Noruega",
+      "visitante": "Irak",
+      "goles_l": 4,
+      "goles_v": 1,
+      "grupo": "I"
     }
   },
   "audit_history": [
@@ -257,6 +264,15 @@
       "Log Loss Klement": 0.244,
       "Log Loss Modelo 2": 0.329,
       "Log Loss Fusión": 0.869
+    },
+    {
+      "Partido": "Noruega vs. Irak",
+      "Real": "4–1",
+      "Pred. Marcador": "4–2",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.607,
+      "Log Loss Modelo 2": 0.57,
+      "Log Loss Fusión": 0.44
     }
   ],
   "fuerzas": {
@@ -397,12 +413,12 @@
       "defensa": 1.321
     },
     "Noruega": {
-      "ataque": 1.879,
-      "defensa": 1.176
+      "ataque": 1.8128,
+      "defensa": 1.0405
     },
     "Irak": {
-      "ataque": 1.631,
-      "defensa": 1.074
+      "ataque": 1.4955,
+      "defensa": 1.0078
     },
     "Argentina": {
       "ataque": 2.832,
