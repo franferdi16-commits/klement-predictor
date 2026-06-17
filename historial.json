@@ -48,6 +48,13 @@
       "goles_l": 0,
       "goles_v": 1,
       "grupo": "C"
+    },
+    "20": {
+      "local": "Australia",
+      "visitante": "Turquía",
+      "goles_l": 2,
+      "goles_v": 0,
+      "grupo": "D"
     }
   },
   "audit_history": [
@@ -113,6 +120,15 @@
       "Log Loss Klement": 0.301,
       "Log Loss Modelo 2": 0.247,
       "Log Loss Fusión": 0.197
+    },
+    {
+      "Partido": "Australia vs. Turquía",
+      "Real": "2–0",
+      "Pred. Marcador": "5–3",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.485,
+      "Log Loss Modelo 2": 0.501,
+      "Log Loss Fusión": 0.584
     }
   ],
   "fuerzas": {
@@ -173,12 +189,12 @@
       "defensa": 0.953
     },
     "Australia": {
-      "ataque": 2.243,
-      "defensa": 1.467
+      "ataque": 1.9429999999999998,
+      "defensa": 1.1352
     },
     "Turquía": {
-      "ataque": 2.005,
-      "defensa": 1.26
+      "ataque": 1.6731999999999998,
+      "defensa": 0.96
     },
     "Alemania": {
       "ataque": 2.487,
