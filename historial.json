@@ -146,6 +146,13 @@
       "goles_l": 4,
       "goles_v": 2,
       "grupo": "L"
+    },
+    "68": {
+      "local": "Ghana",
+      "visitante": "Panamá",
+      "goles_l": 1,
+      "goles_v": 0,
+      "grupo": "L"
     }
   },
   "audit_history": [
@@ -337,6 +344,15 @@
       "Log Loss Klement": 0.334,
       "Log Loss Modelo 2": 0.507,
       "Log Loss Fusión": 0.989
+    },
+    {
+      "Partido": "Ghana vs. Panamá",
+      "Real": "1–0",
+      "Pred. Marcador": "1–2",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 1.252,
+      "Log Loss Modelo 2": 1.176,
+      "Log Loss Fusión": 1.787
     }
   ],
   "fuerzas": {
@@ -525,12 +541,12 @@
       "defensa": 1.49
     },
     "Ghana": {
-      "ataque": 1.62,
-      "defensa": 1.035
+      "ataque": 1.5612000000000001,
+      "defensa": 0.7498999999999999
     },
     "Panamá": {
-      "ataque": 1.926,
-      "defensa": 1.254
+      "ataque": 1.6408999999999998,
+      "defensa": 1.1952
     }
   }
 }
