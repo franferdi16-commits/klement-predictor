@@ -160,6 +160,13 @@
       "goles_l": 3,
       "goles_v": 1,
       "grupo": "K"
+    },
+    "4": {
+      "local": "República Checa",
+      "visitante": "Sudáfrica",
+      "goles_l": 1,
+      "goles_v": 1,
+      "grupo": "A"
     }
   },
   "audit_history": [
@@ -369,6 +376,15 @@
       "Log Loss Klement": 0.31,
       "Log Loss Modelo 2": 0.331,
       "Log Loss Fusión": 0.227
+    },
+    {
+      "Partido": "República Checa vs. Sudáfrica",
+      "Real": "1–1",
+      "Pred. Marcador": "2–1",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 1.382,
+      "Log Loss Modelo 2": 1.544,
+      "Log Loss Fusión": 1.165
     }
   ],
   "fuerzas": {
@@ -377,16 +393,16 @@
       "defensa": 1.665
     },
     "Sudáfrica": {
-      "ataque": 1.638,
-      "defensa": 1.062
+      "ataque": 1.6187999999999998,
+      "defensa": 0.9241
     },
     "República de Corea": {
       "ataque": 1.954,
       "defensa": 1.2424
     },
     "República Checa": {
-      "ataque": 1.7634,
-      "defensa": 1.023
+      "ataque": 1.6255000000000002,
+      "defensa": 1.0038
     },
     "Canadá": {
       "ataque": 1.4223000000000001,
