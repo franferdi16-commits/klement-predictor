@@ -167,6 +167,13 @@
       "goles_l": 1,
       "goles_v": 1,
       "grupo": "A"
+    },
+    "10": {
+      "local": "Suiza",
+      "visitante": "Bosnia y Herzegovina",
+      "goles_l": 4,
+      "goles_v": 1,
+      "grupo": "B"
     }
   },
   "audit_history": [
@@ -385,6 +392,15 @@
       "Log Loss Klement": 1.382,
       "Log Loss Modelo 2": 1.544,
       "Log Loss Fusión": 1.165
+    },
+    {
+      "Partido": "Suiza vs. Bosnia y Herzegovina",
+      "Real": "4–1",
+      "Pred. Marcador": "4–0",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.331,
+      "Log Loss Modelo 2": 0.303,
+      "Log Loss Fusión": 0.2
     }
   ],
   "fuerzas": {
@@ -409,16 +425,16 @@
       "defensa": 1.2276
     },
     "Bosnia y Herzegovina": {
-      "ataque": 1.3106,
-      "defensa": 0.4743
+      "ataque": 1.3496,
+      "defensa": 0.37429999999999997
     },
     "Catar": {
       "ataque": 1.7474,
       "defensa": 0.947
     },
     "Suiza": {
-      "ataque": 1.9330000000000003,
-      "defensa": 1.1714
+      "ataque": 1.8330000000000002,
+      "defensa": 1.2104
     },
     "Brasil": {
       "ataque": 2.335,
