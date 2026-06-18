@@ -153,6 +153,13 @@
       "goles_l": 1,
       "goles_v": 0,
       "grupo": "L"
+    },
+    "66": {
+      "local": "Colombia",
+      "visitante": "Uzbekistán",
+      "goles_l": 3,
+      "goles_v": 1,
+      "grupo": "K"
     }
   },
   "audit_history": [
@@ -353,6 +360,15 @@
       "Log Loss Klement": 1.252,
       "Log Loss Modelo 2": 1.176,
       "Log Loss Fusión": 1.787
+    },
+    {
+      "Partido": "Colombia vs. Uzbekistán",
+      "Real": "3–1",
+      "Pred. Marcador": "5–0",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.31,
+      "Log Loss Modelo 2": 0.331,
+      "Log Loss Fusión": 0.227
     }
   ],
   "fuerzas": {
@@ -521,12 +537,12 @@
       "defensa": 1.5344000000000002
     },
     "Colombia": {
-      "ataque": 2.584,
-      "defensa": 1.566
+      "ataque": 2.384,
+      "defensa": 1.5727
     },
     "Uzbekistán": {
-      "ataque": 1.523,
-      "defensa": 1.002
+      "ataque": 1.5296999999999998,
+      "defensa": 0.802
     },
     "República Democrática del Congo": {
       "ataque": 1.5034,
