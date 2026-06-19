@@ -174,6 +174,13 @@
       "goles_l": 4,
       "goles_v": 1,
       "grupo": "B"
+    },
+    "9": {
+      "local": "Canadá",
+      "visitante": "Catar",
+      "goles_l": 6,
+      "goles_v": 0,
+      "grupo": "B"
     }
   },
   "audit_history": [
@@ -401,6 +408,15 @@
       "Log Loss Klement": 0.331,
       "Log Loss Modelo 2": 0.303,
       "Log Loss Fusión": 0.2
+    },
+    {
+      "Partido": "Canadá vs. Catar",
+      "Real": "6–0",
+      "Pred. Marcador": "1–1",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 1.167,
+      "Log Loss Modelo 2": 0.944,
+      "Log Loss Fusión": 1.104
     }
   ],
   "fuerzas": {
@@ -421,16 +437,16 @@
       "defensa": 1.0038
     },
     "Canadá": {
-      "ataque": 1.4223000000000001,
-      "defensa": 1.2276
+      "ataque": 1.8375000000000001,
+      "defensa": 1.0365
     },
     "Bosnia y Herzegovina": {
       "ataque": 1.3496,
       "defensa": 0.37429999999999997
     },
     "Catar": {
-      "ataque": 1.7474,
-      "defensa": 0.947
+      "ataque": 1.5563,
+      "defensa": 1.3622
     },
     "Suiza": {
       "ataque": 1.8330000000000002,
