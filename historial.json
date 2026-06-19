@@ -181,6 +181,13 @@
       "goles_l": 6,
       "goles_v": 0,
       "grupo": "B"
+    },
+    "3": {
+      "local": "México",
+      "visitante": "República de Corea",
+      "goles_l": 1,
+      "goles_v": 0,
+      "grupo": "A"
     }
   },
   "audit_history": [
@@ -417,20 +424,29 @@
       "Log Loss Klement": 1.167,
       "Log Loss Modelo 2": 0.944,
       "Log Loss Fusión": 1.104
+    },
+    {
+      "Partido": "México vs. República de Corea",
+      "Real": "1–0",
+      "Pred. Marcador": "4–2",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 1.035,
+      "Log Loss Modelo 2": 0.742,
+      "Log Loss Fusión": 0.476
     }
   ],
   "fuerzas": {
     "México": {
-      "ataque": 2.53,
-      "defensa": 1.665
+      "ataque": 2.1620999999999997,
+      "defensa": 1.407
     },
     "Sudáfrica": {
       "ataque": 1.6187999999999998,
       "defensa": 0.9241
     },
     "República de Corea": {
-      "ataque": 1.954,
-      "defensa": 1.2424
+      "ataque": 1.696,
+      "defensa": 0.8744999999999998
     },
     "República Checa": {
       "ataque": 1.6255000000000002,
