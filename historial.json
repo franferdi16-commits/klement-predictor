@@ -188,6 +188,13 @@
       "goles_l": 1,
       "goles_v": 0,
       "grupo": "A"
+    },
+    "21": {
+      "local": "Estados Unidos",
+      "visitante": "Australia",
+      "goles_l": 2,
+      "goles_v": 0,
+      "grupo": "D"
     }
   },
   "audit_history": [
@@ -433,6 +440,15 @@
       "Log Loss Klement": 1.035,
       "Log Loss Modelo 2": 0.742,
       "Log Loss Fusión": 0.476
+    },
+    {
+      "Partido": "Estados Unidos vs. Australia",
+      "Real": "2–0",
+      "Pred. Marcador": "4–2",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.847,
+      "Log Loss Modelo 2": 0.7,
+      "Log Loss Fusión": 0.433
     }
   ],
   "fuerzas": {
@@ -485,16 +501,16 @@
       "defensa": 1.2275
     },
     "Estados Unidos": {
-      "ataque": 2.4019999999999997,
-      "defensa": 1.6165
+      "ataque": 2.1019999999999994,
+      "defensa": 1.3647
     },
     "Paraguay": {
       "ataque": 1.7605000000000002,
       "defensa": 0.953
     },
     "Australia": {
-      "ataque": 1.9429999999999998,
-      "defensa": 1.1352
+      "ataque": 1.6911999999999998,
+      "defensa": 0.8351999999999999
     },
     "Turquía": {
       "ataque": 1.6731999999999998,
