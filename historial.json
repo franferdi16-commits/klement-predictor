@@ -223,6 +223,13 @@
       "goles_l": 5,
       "goles_v": 1,
       "grupo": "F"
+    },
+    "27": {
+      "local": "Alemania",
+      "visitante": "Costa de Marfil",
+      "goles_l": 2,
+      "goles_v": 1,
+      "grupo": "E"
     }
   },
   "audit_history": [
@@ -513,6 +520,15 @@
       "Log Loss Klement": 0.527,
       "Log Loss Modelo 2": 0.716,
       "Log Loss Fusión": 0.644
+    },
+    {
+      "Partido": "Alemania vs. Costa de Marfil",
+      "Real": "2–1",
+      "Pred. Marcador": "5–1",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.39,
+      "Log Loss Modelo 2": 0.513,
+      "Log Loss Fusión": 0.144
     }
   ],
   "fuerzas": {
@@ -581,16 +597,16 @@
       "defensa": 0.9263
     },
     "Alemania": {
-      "ataque": 2.6870000000000003,
-      "defensa": 1.5538
+      "ataque": 2.3870000000000005,
+      "defensa": 1.4853
     },
     "Curazao": {
       "ataque": 1.0708,
       "defensa": 0.9199999999999999
     },
     "Costa de Marfil": {
-      "ataque": 1.7157,
-      "defensa": 0.8099000000000001
+      "ataque": 1.6472,
+      "defensa": 0.5099
     },
     "Ecuador": {
       "ataque": 1.7789000000000001,
