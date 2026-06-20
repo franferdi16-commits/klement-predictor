@@ -209,6 +209,13 @@
       "goles_l": 3,
       "goles_v": 0,
       "grupo": "C"
+    },
+    "22": {
+      "local": "Turquía",
+      "visitante": "Paraguay",
+      "goles_l": 0,
+      "goles_v": 1,
+      "grupo": "D"
     }
   },
   "audit_history": [
@@ -481,6 +488,15 @@
       "Log Loss Klement": 0.147,
       "Log Loss Modelo 2": 0.176,
       "Log Loss Fusión": 0.174
+    },
+    {
+      "Partido": "Turquía vs. Paraguay",
+      "Real": "0–1",
+      "Pred. Marcador": "2–1",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 1.652,
+      "Log Loss Modelo 2": 1.427,
+      "Log Loss Fusión": 1.55
     }
   ],
   "fuerzas": {
@@ -537,16 +553,16 @@
       "defensa": 1.3647
     },
     "Paraguay": {
-      "ataque": 1.7605000000000002,
-      "defensa": 0.953
+      "ataque": 1.7268000000000001,
+      "defensa": 0.7245999999999999
     },
     "Australia": {
       "ataque": 1.6911999999999998,
       "defensa": 0.8351999999999999
     },
     "Turquía": {
-      "ataque": 1.6731999999999998,
-      "defensa": 0.96
+      "ataque": 1.4447999999999999,
+      "defensa": 0.9263
     },
     "Alemania": {
       "ataque": 2.6870000000000003,
