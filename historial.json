@@ -202,6 +202,13 @@
       "goles_l": 0,
       "goles_v": 1,
       "grupo": "C"
+    },
+    "15": {
+      "local": "Brasil",
+      "visitante": "Haití",
+      "goles_l": 3,
+      "goles_v": 0,
+      "grupo": "C"
     }
   },
   "audit_history": [
@@ -465,6 +472,15 @@
       "Log Loss Klement": 1.046,
       "Log Loss Modelo 2": 0.876,
       "Log Loss Fusión": 1.089
+    },
+    {
+      "Partido": "Brasil vs. Haití",
+      "Real": "3–0",
+      "Pred. Marcador": "4–0",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.147,
+      "Log Loss Modelo 2": 0.176,
+      "Log Loss Fusión": 0.174
     }
   ],
   "fuerzas": {
@@ -501,16 +517,16 @@
       "defensa": 1.2104
     },
     "Brasil": {
-      "ataque": 2.335,
-      "defensa": 1.2200000000000002
+      "ataque": 2.135,
+      "defensa": 1.1979000000000002
     },
     "Marruecos": {
       "ataque": 1.9581,
       "defensa": 0.8415999999999997
     },
     "Haití": {
-      "ataque": 1.1425,
-      "defensa": 0.33799999999999997
+      "ataque": 1.1204,
+      "defensa": 0.13799999999999996
     },
     "Escocia": {
       "ataque": 1.3005999999999998,
