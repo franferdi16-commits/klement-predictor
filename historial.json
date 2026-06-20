@@ -216,6 +216,13 @@
       "goles_l": 0,
       "goles_v": 1,
       "grupo": "D"
+    },
+    "33": {
+      "local": "Países Bajos",
+      "visitante": "Suecia",
+      "goles_l": 5,
+      "goles_v": 1,
+      "grupo": "F"
     }
   },
   "audit_history": [
@@ -497,6 +504,15 @@
       "Log Loss Klement": 1.652,
       "Log Loss Modelo 2": 1.427,
       "Log Loss Fusión": 1.55
+    },
+    {
+      "Partido": "Países Bajos vs. Suecia",
+      "Real": "5–1",
+      "Pred. Marcador": "4–4",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.527,
+      "Log Loss Modelo 2": 0.716,
+      "Log Loss Fusión": 0.644
     }
   ],
   "fuerzas": {
@@ -581,16 +597,16 @@
       "defensa": 1.0516999999999999
     },
     "Países Bajos": {
-      "ataque": 2.3739999999999997,
-      "defensa": 1.311
+      "ataque": 2.4315999999999995,
+      "defensa": 1.0417999999999998
     },
     "Japón": {
       "ataque": 2.101,
       "defensa": 1.2089999999999999
     },
     "Suecia": {
-      "ataque": 2.311,
-      "defensa": 1.252
+      "ataque": 2.0418,
+      "defensa": 1.3095999999999999
     },
     "Túnez": {
       "ataque": 1.75,
