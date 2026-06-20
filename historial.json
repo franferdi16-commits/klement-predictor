@@ -195,6 +195,13 @@
       "goles_l": 2,
       "goles_v": 0,
       "grupo": "D"
+    },
+    "16": {
+      "local": "Escocia",
+      "visitante": "Marruecos",
+      "goles_l": 0,
+      "goles_v": 1,
+      "grupo": "C"
     }
   },
   "audit_history": [
@@ -449,6 +456,15 @@
       "Log Loss Klement": 0.847,
       "Log Loss Modelo 2": 0.7,
       "Log Loss Fusión": 0.433
+    },
+    {
+      "Partido": "Escocia vs. Marruecos",
+      "Real": "0–1",
+      "Pred. Marcador": "2–2",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 1.046,
+      "Log Loss Modelo 2": 0.876,
+      "Log Loss Fusión": 1.089
     }
   ],
   "fuerzas": {
@@ -489,16 +505,16 @@
       "defensa": 1.2200000000000002
     },
     "Marruecos": {
-      "ataque": 2.141,
-      "defensa": 1.1389999999999998
+      "ataque": 1.9581,
+      "defensa": 0.8415999999999997
     },
     "Haití": {
       "ataque": 1.1425,
       "defensa": 0.33799999999999997
     },
     "Escocia": {
-      "ataque": 1.5979999999999999,
-      "defensa": 1.2275
+      "ataque": 1.3005999999999998,
+      "defensa": 1.0446
     },
     "Estados Unidos": {
       "ataque": 2.1019999999999994,
