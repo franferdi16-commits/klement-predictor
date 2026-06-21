@@ -237,6 +237,13 @@
       "goles_l": 0,
       "goles_v": 0,
       "grupo": "E"
+    },
+    "34": {
+      "local": "Túnez",
+      "visitante": "Japón",
+      "goles_l": 0,
+      "goles_v": 4,
+      "grupo": "F"
     }
   },
   "audit_history": [
@@ -545,6 +552,15 @@
       "Log Loss Klement": 1.644,
       "Log Loss Modelo 2": 1.97,
       "Log Loss Fusión": 2.763
+    },
+    {
+      "Partido": "Túnez vs. Japón",
+      "Real": "0–4",
+      "Pred. Marcador": "1–2",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.807,
+      "Log Loss Modelo 2": 0.754,
+      "Log Loss Fusión": 0.511
     }
   ],
   "fuerzas": {
@@ -633,16 +649,16 @@
       "defensa": 1.0417999999999998
     },
     "Japón": {
-      "ataque": 2.101,
-      "defensa": 1.2089999999999999
+      "ataque": 2.2182,
+      "defensa": 1.0353999999999999
     },
     "Suecia": {
       "ataque": 2.0418,
       "defensa": 1.3095999999999999
     },
     "Túnez": {
-      "ataque": 1.75,
-      "defensa": 1.278
+      "ataque": 1.5764,
+      "defensa": 1.3952
     },
     "Bélgica": {
       "ataque": 2.721,
