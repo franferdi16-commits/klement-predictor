@@ -251,6 +251,13 @@
       "goles_l": 4,
       "goles_v": 0,
       "grupo": "H"
+    },
+    "39": {
+      "local": "Bélgica",
+      "visitante": "Egipto",
+      "goles_l": 1,
+      "goles_v": 1,
+      "grupo": "G"
     }
   },
   "audit_history": [
@@ -577,6 +584,15 @@
       "Log Loss Klement": 0.367,
       "Log Loss Modelo 2": 0.451,
       "Log Loss Fusión": 0.08
+    },
+    {
+      "Partido": "Bélgica vs. Egipto",
+      "Real": "1–1",
+      "Pred. Marcador": "5–2",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 1.718,
+      "Log Loss Modelo 2": 1.669,
+      "Log Loss Fusión": 2.419
     }
   ],
   "fuerzas": {
@@ -677,16 +693,16 @@
       "defensa": 1.3952
     },
     "Bélgica": {
-      "ataque": 2.721,
-      "defensa": 1.659
+      "ataque": 2.321,
+      "defensa": 1.5388
     },
     "Irán": {
       "ataque": 2.04,
       "defensa": 1.71
     },
     "Egipto": {
-      "ataque": 2.131,
-      "defensa": 1.359
+      "ataque": 2.0107999999999997,
+      "defensa": 0.959
     },
     "Nueva Zelanda": {
       "ataque": 0.9760000000000001,
