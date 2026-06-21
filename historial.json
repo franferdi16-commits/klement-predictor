@@ -244,6 +244,13 @@
       "goles_l": 0,
       "goles_v": 4,
       "grupo": "F"
+    },
+    "45": {
+      "local": "España",
+      "visitante": "Arabia Saudita",
+      "goles_l": 4,
+      "goles_v": 0,
+      "grupo": "H"
     }
   },
   "audit_history": [
@@ -561,6 +568,15 @@
       "Log Loss Klement": 0.807,
       "Log Loss Modelo 2": 0.754,
       "Log Loss Fusión": 0.511
+    },
+    {
+      "Partido": "España vs. Arabia Saudita",
+      "Real": "4–0",
+      "Pred. Marcador": "4–1",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.367,
+      "Log Loss Modelo 2": 0.451,
+      "Log Loss Fusión": 0.08
     }
   ],
   "fuerzas": {
@@ -677,16 +693,16 @@
       "defensa": 0.249
     },
     "España": {
-      "ataque": 2.181,
-      "defensa": 1.4279
+      "ataque": 2.081,
+      "defensa": 1.3091
     },
     "Uruguay": {
       "ataque": 2.202,
       "defensa": 1.432
     },
     "Arabia Saudita": {
-      "ataque": 1.59,
-      "defensa": 0.7339999999999999
+      "ataque": 1.4712,
+      "defensa": 0.6339999999999999
     },
     "Cabo Verde": {
       "ataque": 1.3389,
