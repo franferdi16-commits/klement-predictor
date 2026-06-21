@@ -258,6 +258,13 @@
       "goles_l": 1,
       "goles_v": 1,
       "grupo": "G"
+    },
+    "37": {
+      "local": "Bélgica",
+      "visitante": "Irán",
+      "goles_l": 0,
+      "goles_v": 0,
+      "grupo": "G"
     }
   },
   "audit_history": [
@@ -593,6 +600,15 @@
       "Log Loss Klement": 1.718,
       "Log Loss Modelo 2": 1.669,
       "Log Loss Fusión": 2.419
+    },
+    {
+      "Partido": "Bélgica vs. Irán",
+      "Real": "0–0",
+      "Pred. Marcador": "2–2",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 1.691,
+      "Log Loss Modelo 2": 1.64,
+      "Log Loss Fusión": 1.774
     }
   ],
   "fuerzas": {
@@ -693,12 +709,12 @@
       "defensa": 1.3952
     },
     "Bélgica": {
-      "ataque": 2.321,
-      "defensa": 1.5388
+      "ataque": 2.0043,
+      "defensa": 1.3243
     },
     "Irán": {
-      "ataque": 2.04,
-      "defensa": 1.71
+      "ataque": 1.8255,
+      "defensa": 1.3933
     },
     "Egipto": {
       "ataque": 2.0107999999999997,
