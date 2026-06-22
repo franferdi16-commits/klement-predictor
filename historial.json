@@ -265,6 +265,13 @@
       "goles_l": 0,
       "goles_v": 0,
       "grupo": "G"
+    },
+    "46": {
+      "local": "Cabo Verde",
+      "visitante": "Uruguay",
+      "goles_l": 2,
+      "goles_v": 2,
+      "grupo": "H"
     }
   },
   "audit_history": [
@@ -609,6 +616,15 @@
       "Log Loss Klement": 1.691,
       "Log Loss Modelo 2": 1.64,
       "Log Loss Fusión": 1.774
+    },
+    {
+      "Partido": "Cabo Verde vs. Uruguay",
+      "Real": "2–2",
+      "Pred. Marcador": "0–5",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 1.374,
+      "Log Loss Modelo 2": 1.695,
+      "Log Loss Fusión": 1.73
     }
   ],
   "fuerzas": {
@@ -729,16 +745,16 @@
       "defensa": 1.3091
     },
     "Uruguay": {
-      "ataque": 2.202,
-      "defensa": 1.432
+      "ataque": 1.902,
+      "defensa": 1.5616999999999999
     },
     "Arabia Saudita": {
       "ataque": 1.4712,
       "defensa": 0.6339999999999999
     },
     "Cabo Verde": {
-      "ataque": 1.3389,
-      "defensa": 0.5049999999999999
+      "ataque": 1.4686,
+      "defensa": 0.20499999999999985
     },
     "Francia": {
       "ataque": 2.589,
