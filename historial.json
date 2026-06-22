@@ -272,6 +272,13 @@
       "goles_l": 2,
       "goles_v": 2,
       "grupo": "H"
+    },
+    "38": {
+      "local": "Egipto",
+      "visitante": "Nueva Zelanda",
+      "goles_l": 3,
+      "goles_v": 1,
+      "grupo": "G"
     }
   },
   "audit_history": [
@@ -625,6 +632,15 @@
       "Log Loss Klement": 1.374,
       "Log Loss Modelo 2": 1.695,
       "Log Loss Fusión": 1.73
+    },
+    {
+      "Partido": "Egipto vs. Nueva Zelanda",
+      "Real": "3–1",
+      "Pred. Marcador": "4–0",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.313,
+      "Log Loss Modelo 2": 0.194,
+      "Log Loss Fusión": 0.178
     }
   ],
   "fuerzas": {
@@ -733,12 +749,12 @@
       "defensa": 1.3933
     },
     "Egipto": {
-      "ataque": 2.0107999999999997,
-      "defensa": 0.959
+      "ataque": 1.8107999999999997,
+      "defensa": 1.039
     },
     "Nueva Zelanda": {
-      "ataque": 0.9760000000000001,
-      "defensa": 0.249
+      "ataque": 1.056,
+      "defensa": 0.1
     },
     "España": {
       "ataque": 2.081,
