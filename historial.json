@@ -279,6 +279,13 @@
       "goles_l": 3,
       "goles_v": 1,
       "grupo": "G"
+    },
+    "55": {
+      "local": "Argentina",
+      "visitante": "Austria",
+      "goles_l": 2,
+      "goles_v": 0,
+      "grupo": "J"
     }
   },
   "audit_history": [
@@ -641,6 +648,15 @@
       "Log Loss Klement": 0.313,
       "Log Loss Modelo 2": 0.194,
       "Log Loss Fusión": 0.178
+    },
+    {
+      "Partido": "Argentina vs. Austria",
+      "Real": "2–0",
+      "Pred. Marcador": "5–2",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.526,
+      "Log Loss Modelo 2": 0.704,
+      "Log Loss Fusión": 0.532
     }
   ],
   "fuerzas": {
@@ -789,12 +805,12 @@
       "defensa": 1.0078
     },
     "Argentina": {
-      "ataque": 2.6319999999999997,
-      "defensa": 1.3792999999999997
+      "ataque": 2.332,
+      "defensa": 1.0747999999999998
     },
     "Austria": {
-      "ataque": 2.05,
-      "defensa": 1.4133
+      "ataque": 1.7454999999999998,
+      "defensa": 1.1133
     },
     "Argelia": {
       "ataque": 1.6423,
