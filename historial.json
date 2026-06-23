@@ -293,6 +293,13 @@
       "goles_l": 0,
       "goles_v": 3,
       "grupo": "I"
+    },
+    "54": {
+      "local": "Senegal",
+      "visitante": "Noruega",
+      "goles_l": 2,
+      "goles_v": 3,
+      "grupo": "I"
     }
   },
   "audit_history": [
@@ -673,6 +680,15 @@
       "Log Loss Klement": 0.614,
       "Log Loss Modelo 2": 0.424,
       "Log Loss Fusión": 0.224
+    },
+    {
+      "Partido": "Senegal vs. Noruega",
+      "Real": "2–3",
+      "Pred. Marcador": "3–1",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 1.76,
+      "Log Loss Modelo 2": 1.585,
+      "Log Loss Fusión": 1.946
     }
   ],
   "fuerzas": {
@@ -809,12 +825,12 @@
       "defensa": 1.1893
     },
     "Senegal": {
-      "ataque": 2.0915,
-      "defensa": 1.321
+      "ataque": 1.9410999999999998,
+      "defensa": 1.4354
     },
     "Noruega": {
-      "ataque": 1.8128,
-      "defensa": 1.0405
+      "ataque": 1.9272,
+      "defensa": 0.8901
     },
     "Irak": {
       "ataque": 1.3963,
