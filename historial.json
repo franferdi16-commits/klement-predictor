@@ -307,6 +307,13 @@
       "goles_l": 2,
       "goles_v": 1,
       "grupo": "J"
+    },
+    "63": {
+      "local": "Portugal",
+      "visitante": "Uzbekistán",
+      "goles_l": 5,
+      "goles_v": 0,
+      "grupo": "K"
     }
   },
   "audit_history": [
@@ -705,6 +712,15 @@
       "Log Loss Klement": 0.599,
       "Log Loss Modelo 2": 0.503,
       "Log Loss Fusión": 0.402
+    },
+    {
+      "Partido": "Portugal vs. Uzbekistán",
+      "Real": "5–0",
+      "Pred. Marcador": "5–0",
+      "✅ Marcador": "✅",
+      "Log Loss Klement": 0.273,
+      "Log Loss Modelo 2": 0.332,
+      "Log Loss Fusión": 0.039
     }
   ],
   "fuerzas": {
@@ -870,14 +886,14 @@
     },
     "Portugal": {
       "ataque": 2.2920000000000003,
-      "defensa": 1.5344000000000002
+      "defensa": 1.4706000000000001
     },
     "Colombia": {
       "ataque": 2.384,
       "defensa": 1.5727
     },
     "Uzbekistán": {
-      "ataque": 1.5296999999999998,
+      "ataque": 1.4658999999999998,
       "defensa": 0.802
     },
     "República Democrática del Congo": {
