@@ -286,6 +286,13 @@
       "goles_l": 2,
       "goles_v": 0,
       "grupo": "J"
+    },
+    "53": {
+      "local": "Irak",
+      "visitante": "Francia",
+      "goles_l": 0,
+      "goles_v": 3,
+      "grupo": "I"
     }
   },
   "audit_history": [
@@ -657,6 +664,15 @@
       "Log Loss Klement": 0.526,
       "Log Loss Modelo 2": 0.704,
       "Log Loss Fusión": 0.532
+    },
+    {
+      "Partido": "Irak vs. Francia",
+      "Real": "0–3",
+      "Pred. Marcador": "1–4",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.614,
+      "Log Loss Modelo 2": 0.424,
+      "Log Loss Fusión": 0.224
     }
   ],
   "fuerzas": {
@@ -789,8 +805,8 @@
       "defensa": 0.20499999999999985
     },
     "Francia": {
-      "ataque": 2.589,
-      "defensa": 1.2885
+      "ataque": 2.389,
+      "defensa": 1.1893
     },
     "Senegal": {
       "ataque": 2.0915,
@@ -801,8 +817,8 @@
       "defensa": 1.0405
     },
     "Irak": {
-      "ataque": 1.4955,
-      "defensa": 1.0078
+      "ataque": 1.3963,
+      "defensa": 0.8078000000000001
     },
     "Argentina": {
       "ataque": 2.332,
