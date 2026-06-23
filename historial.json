@@ -300,6 +300,13 @@
       "goles_l": 2,
       "goles_v": 3,
       "grupo": "I"
+    },
+    "56": {
+      "local": "Argelia",
+      "visitante": "Jordania",
+      "goles_l": 2,
+      "goles_v": 1,
+      "grupo": "J"
     }
   },
   "audit_history": [
@@ -689,6 +696,15 @@
       "Log Loss Klement": 1.76,
       "Log Loss Modelo 2": 1.585,
       "Log Loss Fusión": 1.946
+    },
+    {
+      "Partido": "Argelia vs. Jordania",
+      "Real": "2–1",
+      "Pred. Marcador": "2–0",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.599,
+      "Log Loss Modelo 2": 0.503,
+      "Log Loss Fusión": 0.402
     }
   ],
   "fuerzas": {
@@ -845,12 +861,12 @@
       "defensa": 1.1133
     },
     "Argelia": {
-      "ataque": 1.6423,
-      "defensa": 1.0390000000000001
+      "ataque": 1.5775000000000001,
+      "defensa": 1.0711000000000002
     },
     "Jordania": {
-      "ataque": 1.3453000000000002,
-      "defensa": 0.7330000000000001
+      "ataque": 1.3774000000000002,
+      "defensa": 0.6682000000000001
     },
     "Portugal": {
       "ataque": 2.2920000000000003,
