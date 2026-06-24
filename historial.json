@@ -342,6 +342,13 @@
       "goles_l": 2,
       "goles_v": 1,
       "grupo": "B"
+    },
+    "12": {
+      "local": "Bosnia y Herzegovina",
+      "visitante": "Catar",
+      "goles_l": 3,
+      "goles_v": 1,
+      "grupo": "B"
     }
   },
   "audit_history": [
@@ -785,6 +792,15 @@
       "Log Loss Klement": 0.538,
       "Log Loss Modelo 2": 0.531,
       "Log Loss Fusión": 0.302
+    },
+    {
+      "Partido": "Bosnia y Herzegovina vs. Catar",
+      "Real": "3–1",
+      "Pred. Marcador": "0–5",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 1.77,
+      "Log Loss Modelo 2": 1.754,
+      "Log Loss Fusión": 4.605
     }
   ],
   "fuerzas": {
@@ -809,12 +825,12 @@
       "defensa": 0.8342999999999999
     },
     "Bosnia y Herzegovina": {
-      "ataque": 1.3496,
-      "defensa": 0.37429999999999997
+      "ataque": 1.5909,
+      "defensa": 0.1
     },
     "Catar": {
-      "ataque": 1.5563,
-      "defensa": 1.3622
+      "ataque": 1.1562999999999999,
+      "defensa": 1.6035000000000001
     },
     "Suiza": {
       "ataque": 1.6308000000000002,
