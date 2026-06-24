@@ -321,6 +321,13 @@
       "goles_l": 0,
       "goles_v": 0,
       "grupo": "L"
+    },
+    "70": {
+      "local": "Panamá",
+      "visitante": "Croacia",
+      "goles_l": 0,
+      "goles_v": 1,
+      "grupo": "L"
     }
   },
   "audit_history": [
@@ -737,6 +744,15 @@
       "Log Loss Klement": 1.897,
       "Log Loss Modelo 2": 1.781,
       "Log Loss Fusión": 2.966
+    },
+    {
+      "Partido": "Panamá vs. Croacia",
+      "Real": "0–1",
+      "Pred. Marcador": "1–2",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.813,
+      "Log Loss Modelo 2": 0.675,
+      "Log Loss Fusión": 0.522
     }
   ],
   "fuerzas": {
@@ -921,16 +937,16 @@
       "defensa": 1.2147
     },
     "Croacia": {
-      "ataque": 2.245,
-      "defensa": 1.49
+      "ataque": 2.0605,
+      "defensa": 1.3593
     },
     "Ghana": {
       "ataque": 1.4439000000000002,
       "defensa": 0.2498999999999999
     },
     "Panamá": {
-      "ataque": 1.6408999999999998,
-      "defensa": 1.1952
+      "ataque": 1.5101999999999998,
+      "defensa": 1.0107
     }
   }
 }
