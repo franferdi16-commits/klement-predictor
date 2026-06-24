@@ -335,6 +335,13 @@
       "goles_l": 0,
       "goles_v": 1,
       "grupo": "K"
+    },
+    "11": {
+      "local": "Suiza",
+      "visitante": "Canadá",
+      "goles_l": 2,
+      "goles_v": 1,
+      "grupo": "B"
     }
   },
   "audit_history": [
@@ -769,6 +776,15 @@
       "Log Loss Klement": 0.635,
       "Log Loss Modelo 2": 0.472,
       "Log Loss Fusión": 0.053
+    },
+    {
+      "Partido": "Suiza vs. Canadá",
+      "Real": "2–1",
+      "Pred. Marcador": "3–1",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.538,
+      "Log Loss Modelo 2": 0.531,
+      "Log Loss Fusión": 0.302
     }
   ],
   "fuerzas": {
@@ -789,8 +805,8 @@
       "defensa": 1.0038
     },
     "Canadá": {
-      "ataque": 1.8375000000000001,
-      "defensa": 1.0365
+      "ataque": 1.7378,
+      "defensa": 0.8342999999999999
     },
     "Bosnia y Herzegovina": {
       "ataque": 1.3496,
@@ -801,8 +817,8 @@
       "defensa": 1.3622
     },
     "Suiza": {
-      "ataque": 1.8330000000000002,
-      "defensa": 1.2104
+      "ataque": 1.6308000000000002,
+      "defensa": 1.1107
     },
     "Brasil": {
       "ataque": 2.135,
