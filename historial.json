@@ -328,6 +328,13 @@
       "goles_l": 0,
       "goles_v": 1,
       "grupo": "L"
+    },
+    "64": {
+      "local": "República Democrática del Congo",
+      "visitante": "Colombia",
+      "goles_l": 0,
+      "goles_v": 1,
+      "grupo": "K"
     }
   },
   "audit_history": [
@@ -753,6 +760,15 @@
       "Log Loss Klement": 0.813,
       "Log Loss Modelo 2": 0.675,
       "Log Loss Fusión": 0.522
+    },
+    {
+      "Partido": "República Democrática del Congo vs. Colombia",
+      "Real": "0–1",
+      "Pred. Marcador": "0–4",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.635,
+      "Log Loss Modelo 2": 0.472,
+      "Log Loss Fusión": 0.053
     }
   ],
   "fuerzas": {
@@ -921,16 +937,16 @@
       "defensa": 1.4706000000000001
     },
     "Colombia": {
-      "ataque": 2.384,
-      "defensa": 1.5727
+      "ataque": 1.984,
+      "defensa": 1.4881
     },
     "Uzbekistán": {
       "ataque": 1.4658999999999998,
       "defensa": 0.802
     },
     "República Democrática del Congo": {
-      "ataque": 1.5034,
-      "defensa": 0.638
+      "ataque": 1.4188,
+      "defensa": 0.238
     },
     "Inglaterra": {
       "ataque": 2.128,
