@@ -370,6 +370,13 @@
       "goles_l": 1,
       "goles_v": 0,
       "grupo": "A"
+    },
+    "5": {
+      "local": "República Checa",
+      "visitante": "México",
+      "goles_l": 0,
+      "goles_v": 3,
+      "grupo": "A"
     }
   },
   "audit_history": [
@@ -849,12 +856,21 @@
       "Log Loss Klement": 1.524,
       "Log Loss Modelo 2": 1.449,
       "Log Loss Fusión": 1.804
+    },
+    {
+      "Partido": "República Checa vs. México",
+      "Real": "0–3",
+      "Pred. Marcador": "1–4",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.939,
+      "Log Loss Modelo 2": 0.87,
+      "Log Loss Fusión": 0.177
     }
   ],
   "fuerzas": {
     "México": {
-      "ataque": 2.1620999999999997,
-      "defensa": 1.407
+      "ataque": 1.9837999999999996,
+      "defensa": 1.2277
     },
     "Sudáfrica": {
       "ataque": 1.5422999999999998,
@@ -865,8 +881,8 @@
       "defensa": 0.7979999999999998
     },
     "República Checa": {
-      "ataque": 1.6255000000000002,
-      "defensa": 1.0038
+      "ataque": 1.4462000000000002,
+      "defensa": 0.8255
     },
     "Canadá": {
       "ataque": 1.7378,
