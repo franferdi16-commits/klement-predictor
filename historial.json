@@ -363,6 +363,13 @@
       "goles_l": 0,
       "goles_v": 3,
       "grupo": "C"
+    },
+    "6": {
+      "local": "Sudáfrica",
+      "visitante": "República de Corea",
+      "goles_l": 1,
+      "goles_v": 0,
+      "grupo": "A"
     }
   },
   "audit_history": [
@@ -833,6 +840,15 @@
       "Log Loss Klement": 0.981,
       "Log Loss Modelo 2": 0.692,
       "Log Loss Fusión": 0.27
+    },
+    {
+      "Partido": "Sudáfrica vs. República de Corea",
+      "Real": "1–0",
+      "Pred. Marcador": "1–2",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 1.524,
+      "Log Loss Modelo 2": 1.449,
+      "Log Loss Fusión": 1.804
     }
   ],
   "fuerzas": {
@@ -841,12 +857,12 @@
       "defensa": 1.407
     },
     "Sudáfrica": {
-      "ataque": 1.6187999999999998,
-      "defensa": 0.9241
+      "ataque": 1.5422999999999998,
+      "defensa": 0.5879
     },
     "República de Corea": {
-      "ataque": 1.696,
-      "defensa": 0.8744999999999998
+      "ataque": 1.3598,
+      "defensa": 0.7979999999999998
     },
     "República Checa": {
       "ataque": 1.6255000000000002,
