@@ -384,6 +384,13 @@
       "goles_l": 2,
       "goles_v": 1,
       "grupo": "E"
+    },
+    "30": {
+      "local": "Curazao",
+      "visitante": "Costa de Marfil",
+      "goles_l": 0,
+      "goles_v": 2,
+      "grupo": "E"
     }
   },
   "audit_history": [
@@ -881,6 +888,15 @@
       "Log Loss Klement": 0.786,
       "Log Loss Modelo 2": 0.984,
       "Log Loss Fusión": 2.755
+    },
+    {
+      "Partido": "Curazao vs. Costa de Marfil",
+      "Real": "0–2",
+      "Pred. Marcador": "0–3",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.532,
+      "Log Loss Modelo 2": 0.415,
+      "Log Loss Fusión": 0.101
     }
   ],
   "fuerzas": {
@@ -953,12 +969,12 @@
       "defensa": 1.5183
     },
     "Curazao": {
-      "ataque": 1.0483,
-      "defensa": 0.6100999999999999
+      "ataque": 0.996,
+      "defensa": 0.4667999999999999
     },
     "Costa de Marfil": {
-      "ataque": 1.6472,
-      "defensa": 0.5099
+      "ataque": 1.5039,
+      "defensa": 0.4576
     },
     "Ecuador": {
       "ataque": 1.502,
