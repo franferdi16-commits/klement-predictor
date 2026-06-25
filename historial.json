@@ -377,6 +377,13 @@
       "goles_l": 0,
       "goles_v": 3,
       "grupo": "A"
+    },
+    "29": {
+      "local": "Ecuador",
+      "visitante": "Alemania",
+      "goles_l": 2,
+      "goles_v": 1,
+      "grupo": "E"
     }
   },
   "audit_history": [
@@ -865,6 +872,15 @@
       "Log Loss Klement": 0.939,
       "Log Loss Modelo 2": 0.87,
       "Log Loss Fusión": 0.177
+    },
+    {
+      "Partido": "Ecuador vs. Alemania",
+      "Real": "2–1",
+      "Pred. Marcador": "1–5",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.786,
+      "Log Loss Modelo 2": 0.984,
+      "Log Loss Fusión": 2.755
     }
   ],
   "fuerzas": {
@@ -933,8 +949,8 @@
       "defensa": 0.9263
     },
     "Alemania": {
-      "ataque": 2.3870000000000005,
-      "defensa": 1.4853
+      "ataque": 1.9890000000000003,
+      "defensa": 1.5183
     },
     "Curazao": {
       "ataque": 1.0483,
@@ -945,8 +961,8 @@
       "defensa": 0.5099
     },
     "Ecuador": {
-      "ataque": 1.469,
-      "defensa": 1.0292
+      "ataque": 1.502,
+      "defensa": 0.6311999999999998
     },
     "Países Bajos": {
       "ataque": 2.4315999999999995,
