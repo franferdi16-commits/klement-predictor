@@ -349,6 +349,13 @@
       "goles_l": 3,
       "goles_v": 1,
       "grupo": "B"
+    },
+    "18": {
+      "local": "Marruecos",
+      "visitante": "Haití",
+      "goles_l": 4,
+      "goles_v": 2,
+      "grupo": "C"
     }
   },
   "audit_history": [
@@ -801,6 +808,15 @@
       "Log Loss Klement": 1.77,
       "Log Loss Modelo 2": 1.754,
       "Log Loss Fusión": 4.605
+    },
+    {
+      "Partido": "Marruecos vs. Haití",
+      "Real": "4–2",
+      "Pred. Marcador": "4–0",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.166,
+      "Log Loss Modelo 2": 0.163,
+      "Log Loss Fusión": 0.019
     }
   ],
   "fuerzas": {
@@ -841,12 +857,12 @@
       "defensa": 1.1979000000000002
     },
     "Marruecos": {
-      "ataque": 1.9581,
-      "defensa": 0.8415999999999997
+      "ataque": 1.8580999999999999,
+      "defensa": 1.0101999999999998
     },
     "Haití": {
-      "ataque": 1.1204,
-      "defensa": 0.13799999999999996
+      "ataque": 1.2890000000000001,
+      "defensa": 0.1
     },
     "Escocia": {
       "ataque": 1.3005999999999998,
