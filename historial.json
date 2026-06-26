@@ -419,6 +419,13 @@
       "goles_l": 1,
       "goles_v": 1,
       "grupo": "F"
+    },
+    "51": {
+      "local": "Francia",
+      "visitante": "Noruega",
+      "goles_l": 4,
+      "goles_v": 1,
+      "grupo": "I"
     }
   },
   "audit_history": [
@@ -961,6 +968,15 @@
       "Log Loss Klement": 1.625,
       "Log Loss Modelo 2": 1.679,
       "Log Loss Fusión": 1.978
+    },
+    {
+      "Partido": "Francia vs. Noruega",
+      "Real": "4–1",
+      "Pred. Marcador": "5–2",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.358,
+      "Log Loss Modelo 2": 0.452,
+      "Log Loss Fusión": 0.21
     }
   ],
   "fuerzas": {
@@ -1093,16 +1109,16 @@
       "defensa": 0.20499999999999985
     },
     "Francia": {
-      "ataque": 2.389,
-      "defensa": 1.1893
+      "ataque": 2.2889999999999997,
+      "defensa": 1.0701
     },
     "Senegal": {
       "ataque": 1.9410999999999998,
       "defensa": 1.4354
     },
     "Noruega": {
-      "ataque": 1.9272,
-      "defensa": 0.8901
+      "ataque": 1.808,
+      "defensa": 0.7901
     },
     "Irak": {
       "ataque": 1.3963,
