@@ -412,6 +412,13 @@
       "goles_l": 1,
       "goles_v": 3,
       "grupo": "F"
+    },
+    "36": {
+      "local": "Japón",
+      "visitante": "Suecia",
+      "goles_l": 1,
+      "goles_v": 1,
+      "grupo": "F"
     }
   },
   "audit_history": [
@@ -945,6 +952,15 @@
       "Log Loss Klement": 0.764,
       "Log Loss Modelo 2": 0.602,
       "Log Loss Fusión": 0.317
+    },
+    {
+      "Partido": "Japón vs. Suecia",
+      "Real": "1–1",
+      "Pred. Marcador": "4–3",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 1.625,
+      "Log Loss Modelo 2": 1.679,
+      "Log Loss Fusión": 1.978
     }
   ],
   "fuerzas": {
@@ -1033,12 +1049,12 @@
       "defensa": 0.9633999999999998
     },
     "Japón": {
-      "ataque": 2.2182,
-      "defensa": 1.0353999999999999
+      "ataque": 1.8873,
+      "defensa": 0.7911999999999999
     },
     "Suecia": {
-      "ataque": 2.0418,
-      "defensa": 1.3095999999999999
+      "ataque": 1.7975999999999999,
+      "defensa": 0.9786999999999999
     },
     "Túnez": {
       "ataque": 1.498,
