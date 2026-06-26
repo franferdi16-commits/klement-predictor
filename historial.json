@@ -391,6 +391,13 @@
       "goles_l": 0,
       "goles_v": 2,
       "grupo": "E"
+    },
+    "23": {
+      "local": "Turquía",
+      "visitante": "Estados Unidos",
+      "goles_l": 3,
+      "goles_v": 2,
+      "grupo": "D"
     }
   },
   "audit_history": [
@@ -897,6 +904,15 @@
       "Log Loss Klement": 0.532,
       "Log Loss Modelo 2": 0.415,
       "Log Loss Fusión": 0.101
+    },
+    {
+      "Partido": "Turquía vs. Estados Unidos",
+      "Real": "3–2",
+      "Pred. Marcador": "1–5",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 1.111,
+      "Log Loss Modelo 2": 1.138,
+      "Log Loss Fusión": 3.144
     }
   ],
   "fuerzas": {
@@ -949,8 +965,8 @@
       "defensa": 0.9347
     },
     "Estados Unidos": {
-      "ataque": 2.1019999999999994,
-      "defensa": 1.3647
+      "ataque": 1.8019999999999994,
+      "defensa": 1.5205
     },
     "Paraguay": {
       "ataque": 1.7268000000000001,
@@ -961,8 +977,8 @@
       "defensa": 0.8351999999999999
     },
     "Turquía": {
-      "ataque": 1.4447999999999999,
-      "defensa": 0.9263
+      "ataque": 1.6005999999999998,
+      "defensa": 0.6263
     },
     "Alemania": {
       "ataque": 1.9890000000000003,
