@@ -398,6 +398,13 @@
       "goles_l": 3,
       "goles_v": 2,
       "grupo": "D"
+    },
+    "24": {
+      "local": "Paraguay",
+      "visitante": "Australia",
+      "goles_l": 0,
+      "goles_v": 0,
+      "grupo": "D"
     }
   },
   "audit_history": [
@@ -913,6 +920,15 @@
       "Log Loss Klement": 1.111,
       "Log Loss Modelo 2": 1.138,
       "Log Loss Fusión": 3.144
+    },
+    {
+      "Partido": "Paraguay vs. Australia",
+      "Real": "0–0",
+      "Pred. Marcador": "2–4",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 1.361,
+      "Log Loss Modelo 2": 1.525,
+      "Log Loss Fusión": 2.011
     }
   ],
   "fuerzas": {
@@ -969,12 +985,12 @@
       "defensa": 1.5205
     },
     "Paraguay": {
-      "ataque": 1.7268000000000001,
-      "defensa": 0.7245999999999999
+      "ataque": 1.4636,
+      "defensa": 0.3171999999999999
     },
     "Australia": {
-      "ataque": 1.6911999999999998,
-      "defensa": 0.8351999999999999
+      "ataque": 1.2837999999999998,
+      "defensa": 0.5719999999999998
     },
     "Turquía": {
       "ataque": 1.6005999999999998,
