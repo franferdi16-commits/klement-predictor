@@ -454,6 +454,13 @@
       "goles_l": 1,
       "goles_v": 5,
       "grupo": "G"
+    },
+    "42": {
+      "local": "Irán",
+      "visitante": "Egipto",
+      "goles_l": 1,
+      "goles_v": 1,
+      "grupo": "G"
     }
   },
   "audit_history": [
@@ -1041,6 +1048,15 @@
       "Log Loss Klement": 0.263,
       "Log Loss Modelo 2": 0.13,
       "Log Loss Fusión": 0.016
+    },
+    {
+      "Partido": "Irán vs. Egipto",
+      "Real": "1–1",
+      "Pred. Marcador": "3–1",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 1.472,
+      "Log Loss Modelo 2": 1.642,
+      "Log Loss Fusión": 1.879
     }
   ],
   "fuerzas": {
@@ -1145,12 +1161,12 @@
       "defensa": 1.4043
     },
     "Irán": {
-      "ataque": 1.8255,
-      "defensa": 1.3933
+      "ataque": 1.5895,
+      "defensa": 1.2953
     },
     "Egipto": {
-      "ataque": 1.8107999999999997,
-      "defensa": 1.039
+      "ataque": 1.7127999999999997,
+      "defensa": 0.8029999999999999
     },
     "Nueva Zelanda": {
       "ataque": 1.1360000000000001,
