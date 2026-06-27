@@ -440,6 +440,13 @@
       "goles_l": 1,
       "goles_v": 0,
       "grupo": "H"
+    },
+    "44": {
+      "local": "Arabia Saudita",
+      "visitante": "Cabo Verde",
+      "goles_l": 0,
+      "goles_v": 0,
+      "grupo": "H"
     }
   },
   "audit_history": [
@@ -1009,6 +1016,15 @@
       "Log Loss Klement": 0.537,
       "Log Loss Modelo 2": 0.766,
       "Log Loss Fusión": 0.536
+    },
+    {
+      "Partido": "Arabia Saudita vs. Cabo Verde",
+      "Real": "0–0",
+      "Pred. Marcador": "4–1",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 1.181,
+      "Log Loss Modelo 2": 1.336,
+      "Log Loss Fusión": 2.73
     }
   ],
   "fuerzas": {
@@ -1133,12 +1149,12 @@
       "defensa": 1.3063999999999998
     },
     "Arabia Saudita": {
-      "ataque": 1.4712,
-      "defensa": 0.6339999999999999
+      "ataque": 0.9712000000000001,
+      "defensa": 0.4745999999999999
     },
     "Cabo Verde": {
-      "ataque": 1.4686,
-      "defensa": 0.20499999999999985
+      "ataque": 1.3092,
+      "defensa": 0.1
     },
     "Francia": {
       "ataque": 2.2889999999999997,
