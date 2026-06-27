@@ -447,6 +447,13 @@
       "goles_l": 0,
       "goles_v": 0,
       "grupo": "H"
+    },
+    "41": {
+      "local": "Nueva Zelanda",
+      "visitante": "Bélgica",
+      "goles_l": 1,
+      "goles_v": 5,
+      "grupo": "G"
     }
   },
   "audit_history": [
@@ -1025,6 +1032,15 @@
       "Log Loss Klement": 1.181,
       "Log Loss Modelo 2": 1.336,
       "Log Loss Fusión": 2.73
+    },
+    {
+      "Partido": "Nueva Zelanda vs. Bélgica",
+      "Real": "1–5",
+      "Pred. Marcador": "0–4",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.263,
+      "Log Loss Modelo 2": 0.13,
+      "Log Loss Fusión": 0.016
     }
   ],
   "fuerzas": {
@@ -1126,7 +1142,7 @@
     },
     "Bélgica": {
       "ataque": 2.0043,
-      "defensa": 1.3243
+      "defensa": 1.4043
     },
     "Irán": {
       "ataque": 1.8255,
@@ -1137,7 +1153,7 @@
       "defensa": 1.039
     },
     "Nueva Zelanda": {
-      "ataque": 1.056,
+      "ataque": 1.1360000000000001,
       "defensa": 0.1
     },
     "España": {
