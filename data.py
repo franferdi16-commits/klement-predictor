@@ -151,3 +151,64 @@ for g in ["A","B","C","D","E","F","G","H","I","J","K","L"]:
     ]:
         FIXTURE.append({"id":match_id,"grupo":g,"fase":f"Grupo {g}","local":local,"visitante":visitante})
         match_id += 1
+
+# ── FIXTURE ELIMINATORIAS ─────────────────────────────────────────────────────
+# Ronda de 32 (16avos): IDs 73-88  — cruces confirmados FIFA
+# local/visitante = nombre real del equipo una vez clasificado
+# "TBD" mientras no se conozca el clasificado (no aplica aquí, ya están todos)
+
+FIXTURE_ELIMINATORIAS = [
+    # ══ RONDA DE 32 — IDs 73–88 (cruces oficiales FIFA confirmados) ══
+    # Bracket fijo, sin redibujo. Los ganadores siguen el camino del árbol.
+    {"id":73,  "fase":"Ronda de 32", "local":"Canadá",                        "visitante":"Sudáfrica",                        "fecha":"28 jun"},
+    {"id":74,  "fase":"Ronda de 32", "local":"Brasil",                        "visitante":"Japón",                            "fecha":"29 jun"},
+    {"id":75,  "fase":"Ronda de 32", "local":"Alemania",                      "visitante":"Paraguay",                         "fecha":"29 jun"},
+    {"id":76,  "fase":"Ronda de 32", "local":"Países Bajos",                  "visitante":"Marruecos",                        "fecha":"29 jun"},
+    {"id":77,  "fase":"Ronda de 32", "local":"Costa de Marfil",               "visitante":"Noruega",                          "fecha":"30 jun"},
+    {"id":78,  "fase":"Ronda de 32", "local":"Francia",                       "visitante":"Suecia",                           "fecha":"30 jun"},
+    {"id":79,  "fase":"Ronda de 32", "local":"México",                        "visitante":"Ecuador",                          "fecha":"30 jun"},
+    {"id":80,  "fase":"Ronda de 32", "local":"Inglaterra",                    "visitante":"República Democrática del Congo",  "fecha":"1 jul"},
+    {"id":81,  "fase":"Ronda de 32", "local":"Bélgica",                       "visitante":"Senegal",                          "fecha":"1 jul"},
+    {"id":82,  "fase":"Ronda de 32", "local":"Estados Unidos",                "visitante":"Bosnia y Herzegovina",             "fecha":"1 jul"},
+    {"id":83,  "fase":"Ronda de 32", "local":"España",                        "visitante":"Austria",                          "fecha":"2 jul"},
+    {"id":84,  "fase":"Ronda de 32", "local":"Suiza",                         "visitante":"Argelia",                          "fecha":"2 jul"},
+    {"id":85,  "fase":"Ronda de 32", "local":"Portugal",                      "visitante":"Croacia",                          "fecha":"3 jul"},
+    {"id":86,  "fase":"Ronda de 32", "local":"Australia",                     "visitante":"Egipto",                           "fecha":"3 jul"},
+    {"id":87,  "fase":"Ronda de 32", "local":"Colombia",                      "visitante":"Ghana",                            "fecha":"4 jul"},
+    {"id":88,  "fase":"Ronda de 32", "local":"Argentina",                     "visitante":"Cabo Verde",                       "fecha":"4 jul"},
+
+    # ══ RONDA DE 16 (Octavos) — IDs 89–96 ══
+    # Árbol fijo: W73vsW74, W75vsW76, W77vsW78, W79vsW80, W81vsW82, W83vsW84, W85vsW86, W87vsW88
+    {"id":89,  "fase":"Ronda de 16", "local":"W73", "visitante":"W74", "fecha":"5-6 jul"},
+    {"id":90,  "fase":"Ronda de 16", "local":"W75", "visitante":"W76", "fecha":"5-6 jul"},
+    {"id":91,  "fase":"Ronda de 16", "local":"W77", "visitante":"W78", "fecha":"5-6 jul"},
+    {"id":92,  "fase":"Ronda de 16", "local":"W79", "visitante":"W80", "fecha":"5-6 jul"},
+    {"id":93,  "fase":"Ronda de 16", "local":"W81", "visitante":"W82", "fecha":"7-8 jul"},
+    {"id":94,  "fase":"Ronda de 16", "local":"W83", "visitante":"W84", "fecha":"7-8 jul"},
+    {"id":95,  "fase":"Ronda de 16", "local":"W85", "visitante":"W86", "fecha":"7-8 jul"},
+    {"id":96,  "fase":"Ronda de 16", "local":"W87", "visitante":"W88", "fecha":"7-8 jul"},
+
+    # ══ CUARTOS DE FINAL — IDs 97–100 ══
+    {"id":97,  "fase":"Cuartos de final", "local":"W89", "visitante":"W90", "fecha":"11-12 jul"},
+    {"id":98,  "fase":"Cuartos de final", "local":"W91", "visitante":"W92", "fecha":"11-12 jul"},
+    {"id":99,  "fase":"Cuartos de final", "local":"W93", "visitante":"W94", "fecha":"11-12 jul"},
+    {"id":100, "fase":"Cuartos de final", "local":"W95", "visitante":"W96", "fecha":"11-12 jul"},
+
+    # ══ SEMIFINALES — IDs 101–102 ══
+    {"id":101, "fase":"Semifinal", "local":"W97",  "visitante":"W98",  "fecha":"15 jul"},
+    {"id":102, "fase":"Semifinal", "local":"W99",  "visitante":"W100", "fecha":"15 jul"},
+
+    # ══ TERCER PUESTO — ID 103 ══
+    {"id":103, "fase":"Tercer Puesto", "local":"L101", "visitante":"L102", "fecha":"18 jul"},
+
+    # ══ FINAL — ID 104 ══
+    {"id":104, "fase":"Final", "local":"W101", "visitante":"W102", "fecha":"19 jul"},
+]
+
+# ── Mapa de ganadores/perdedores para resolver bracket dinámico ───────────────
+# clave: "W{id}" → equipo ganador del partido {id}
+# clave: "L{id}" → equipo perdedor del partido {id}
+# Se resuelve en runtime desde partidos_jugados del historial
+
+# Unificar fixture completo
+FIXTURE_COMPLETO = FIXTURE + FIXTURE_ELIMINATORIAS
