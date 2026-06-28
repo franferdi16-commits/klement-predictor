@@ -217,10 +217,13 @@ with tab2:
 
             if st.button("🎲 Correr 10,000 Simulaciones (Modo Eliminatoria)", key="sim_elim"):
                 if usar_cal_e and n_grupos >= 1:
+                    # Combinar historial de grupos + eliminatorias para la tendencia
+                    historial_combinado = {**st.session_state.partidos_jugados}
+                    for k, v in st.session_state.partidos_eliminatorias.items():
+                        historial_combinado[int(k) + 1000] = v
                     res_cal_e = calibrador.recalcular_con_tendencia_real(
                         e_id,
-                        {**st.session_state.partidos_jugados,
-                         **{int(k)+1000: v for k,v in st.session_state.partidos_eliminatorias.items()}},
+                        historial_combinado,
                         st.session_state.fuerzas,
                         lk_a_e, lk_b_e, lg_a_e, lg_b_e,
                     )
