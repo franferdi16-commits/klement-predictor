@@ -130,3 +130,48 @@ def recalcular_con_tendencia_real(match_id, partidos_jugados, fuerzas,
         "pf_a": pf_a, "pf_emp": pf_emp, "pf_b": pf_b,
         "mu_a": round(mu_a, 3), "mu_b": round(mu_b, 3),
     }
+
+# ── Modo Eliminatoria: sin empate, con penales ────────────────────────────────
+def simular_eliminatoria(mu_a, mu_b, n_simulaciones=10000):
+    """
+    En eliminatorias no hay empate final.
+    Si 90min empatan → prórroga (lambdas reducidos 40%) → si siguen empatados → penales (50/50 + sesgo fuerzas).
+    Devuelve prob_a, prob_b y si_penales (% que van a penales).
+    """
+    import numpy as np
+    import scipy.stats as stats
+
+    sim_a = stats.poisson.rvs(mu=mu_a, size=n_simulaciones)
+    sim_b = stats.poisson.rvs(mu=mu_b, size=n_simulaciones)
+
+    gana_a   = sim_a > sim_b
+    gana_b   = sim_b > sim_a
+    empate90 = sim_a == sim_b
+
+    # Prórroga: lambda reducido 40%
+    mu_et_a = mu_a * 0.60
+    mu_et_b = mu_b * 0.60
+    et_a = stats.poisson.rvs(mu=mu_et_a, size=n_simulaciones)
+    et_b = stats.poisson.rvs(mu=mu_et_b, size=n_simulaciones)
+
+    gana_a_et   = empate90 & (et_a > et_b)
+    gana_b_et   = empate90 & (et_b > et_a)
+    empate_et   = empate90 & (et_a == et_b)   # → penales
+
+    # Penales: base 50/50 con pequeño sesgo por fuerzas
+    sesgo = min(0.08, abs(mu_a - mu_b) / (mu_a + mu_b + 1e-6))
+    prob_pen_a = 0.50 + (sesgo if mu_a > mu_b else -sesgo)
+
+    pen_wins_a = np.random.rand(n_simulaciones) < prob_pen_a
+    gana_a_pen = empate_et &  pen_wins_a
+    gana_b_pen = empate_et & ~pen_wins_a
+
+    total_a = np.sum(gana_a | gana_a_et | gana_a_pen)
+    total_b = np.sum(gana_b | gana_b_et | gana_b_pen)
+    van_penales = int(np.sum(empate_et))
+
+    prob_a = round(float(total_a / n_simulaciones) * 100, 1)
+    prob_b = round(float(total_b / n_simulaciones) * 100, 1)
+    pct_penales = round(float(van_penales / n_simulaciones) * 100, 1)
+
+    return prob_a, prob_b, pct_penales
