@@ -59,7 +59,7 @@ def recalcular_con_tendencia_real(match_id, partidos_jugados, fuerzas,
     2. Rendimiento reciente individual de cada equipo
     3. Lambdas ajustados por fuerzas dinámicas ataque/defensa
     """
-    match_data = next(p for p in data.FIXTURE if p["id"] == match_id)
+    match_data = next(p for p in data.FIXTURE_COMPLETO if p["id"] == match_id)
     team_a, team_b = match_data["local"], match_data["visitante"]
 
     # 1. Tendencia global
