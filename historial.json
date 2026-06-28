@@ -1161,8 +1161,8 @@
       "defensa": 1.2277
     },
     "Sudáfrica": {
-      "ataque": 1.5422999999999998,
-      "defensa": 0.5879
+      "ataque": 1.3600999999999996,
+      "defensa": 0.2178
     },
     "República de Corea": {
       "ataque": 1.3598,
@@ -1173,8 +1173,8 @@
       "defensa": 0.8255
     },
     "Canadá": {
-      "ataque": 1.7378,
-      "defensa": 0.8342999999999999
+      "ataque": 1.3677000000000001,
+      "defensa": 0.6520999999999999
     },
     "Bosnia y Herzegovina": {
       "ataque": 1.5909,
@@ -1347,6 +1347,15 @@
     "Panamá": {
       "ataque": 1.3626999999999998,
       "defensa": 0.7598999999999999
+    }
+  },
+  "partidos_eliminatorias": {
+    "73": {
+      "local": "Canadá",
+      "visitante": "Sudáfrica",
+      "goles_l": 1,
+      "goles_v": 0,
+      "fase": "Ronda de 32"
     }
   }
 }
