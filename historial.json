@@ -468,6 +468,13 @@
       "goles_l": 0,
       "goles_v": 2,
       "grupo": "L"
+    },
+    "72": {
+      "local": "Croacia",
+      "visitante": "Ghana",
+      "goles_l": 2,
+      "goles_v": 1,
+      "grupo": "L"
     }
   },
   "audit_history": [
@@ -1073,6 +1080,15 @@
       "Log Loss Klement": 0.784,
       "Log Loss Modelo 2": 0.596,
       "Log Loss Fusión": 0.158
+    },
+    {
+      "Partido": "Croacia vs. Ghana",
+      "Real": "2–1",
+      "Pred. Marcador": "4–0",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.273,
+      "Log Loss Modelo 2": 0.353,
+      "Log Loss Fusión": 0.059
     }
   ],
   "fuerzas": {
@@ -1257,12 +1273,12 @@
       "defensa": 1.0672
     },
     "Croacia": {
-      "ataque": 2.0605,
-      "defensa": 1.3593
+      "ataque": 1.7605000000000002,
+      "defensa": 1.3648
     },
     "Ghana": {
-      "ataque": 1.4439000000000002,
-      "defensa": 0.2498999999999999
+      "ataque": 1.4494000000000002,
+      "defensa": 0.1
     },
     "Panamá": {
       "ataque": 1.3626999999999998,
