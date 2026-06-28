@@ -475,6 +475,13 @@
       "goles_l": 2,
       "goles_v": 1,
       "grupo": "L"
+    },
+    "61": {
+      "local": "Portugal",
+      "visitante": "Colombia",
+      "goles_l": 0,
+      "goles_v": 0,
+      "grupo": "K"
     }
   },
   "audit_history": [
@@ -1089,6 +1096,15 @@
       "Log Loss Klement": 0.273,
       "Log Loss Modelo 2": 0.353,
       "Log Loss Fusión": 0.059
+    },
+    {
+      "Partido": "Portugal vs. Colombia",
+      "Real": "0–0",
+      "Pred. Marcador": "4–2",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 1.693,
+      "Log Loss Modelo 2": 1.699,
+      "Log Loss Fusión": 1.942
     }
   ],
   "fuerzas": {
@@ -1253,12 +1269,12 @@
       "defensa": 0.6682000000000001
     },
     "Portugal": {
-      "ataque": 2.2920000000000003,
-      "defensa": 1.4706000000000001
+      "ataque": 1.8813000000000002,
+      "defensa": 1.1816
     },
     "Colombia": {
-      "ataque": 1.984,
-      "defensa": 1.4881
+      "ataque": 1.6949999999999998,
+      "defensa": 1.0774
     },
     "Uzbekistán": {
       "ataque": 1.4658999999999998,
