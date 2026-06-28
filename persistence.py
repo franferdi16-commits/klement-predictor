@@ -21,9 +21,10 @@ def _cfg():
 
 # ── Estructura vacía por defecto ──────────────────────────────────────────────
 ESTADO_VACIO = {
-    "partidos_jugados": {},   # {id: {local, visitante, goles_l, goles_v, grupo}}
-    "audit_history":    [],   # [{Partido, Real, Pred. Marcador, ...}]
-    "fuerzas":          {},   # {equipo: {ataque, defensa}}  ← ajuste dinámico
+    "partidos_jugados":       {},  # {id: {local, visitante, goles_l, goles_v, grupo}}
+    "audit_history":          [],  # [{Partido, Real, Pred. Marcador, ...}]
+    "fuerzas":                {},  # {equipo: {ataque, defensa}}
+    "partidos_eliminatorias": {},  # {id: {local, visitante, goles_l, goles_v, fase, [penales]}}
 }
 
 # ── LEER desde GitHub ─────────────────────────────────────────────────────────
