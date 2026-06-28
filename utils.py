@@ -60,3 +60,47 @@ def calcular_tabla_grupo(letra_grupo, partidos_jugados):
     # Ajustamos el índice visual para que inicie en 1 en lugar de 0 (Formato de tabla de posiciones)
     df.index += 1
     return df
+
+
+# ── Resolver bracket dinámico ─────────────────────────────────────────────────
+def resolver_bracket(partidos_eliminatorias):
+    """
+    Dado un dict {id: {local, visitante, goles_l, goles_v, penales_l, penales_v}},
+    devuelve un dict {"W{id}": equipo_ganador, "L{id}": equipo_perdedor}.
+    En eliminatorias el ganador es quien tiene más goles totales
+    (o gana penales si está registrado).
+    """
+    mapa = {}
+    for pid, r in partidos_eliminatorias.items():
+        pid = int(pid)
+        gl = r.get("goles_l", 0)
+        gv = r.get("goles_v", 0)
+        pen_l = r.get("penales_l", None)
+        pen_v = r.get("penales_v", None)
+
+        if gl > gv:
+            ganador, perdedor = r["local"], r["visitante"]
+        elif gv > gl:
+            ganador, perdedor = r["visitante"], r["local"]
+        elif pen_l is not None and pen_v is not None:
+            if pen_l > pen_v:
+                ganador, perdedor = r["local"], r["visitante"]
+            else:
+                ganador, perdedor = r["visitante"], r["local"]
+        else:
+            continue  # partido no decidido aún
+
+        mapa[f"W{pid}"] = ganador
+        mapa[f"L{pid}"] = perdedor
+    return mapa
+
+
+def nombre_partido(partido, mapa_bracket):
+    """
+    Devuelve (local_display, visitante_display) resolviendo W/L si es posible.
+    """
+    loc = partido["local"]
+    vis = partido["visitante"]
+    loc_real = mapa_bracket.get(loc, loc)
+    vis_real = mapa_bracket.get(vis, vis)
+    return loc_real, vis_real
