@@ -461,6 +461,13 @@
       "goles_l": 1,
       "goles_v": 1,
       "grupo": "G"
+    },
+    "71": {
+      "local": "Panamá",
+      "visitante": "Inglaterra",
+      "goles_l": 0,
+      "goles_v": 2,
+      "grupo": "L"
     }
   },
   "audit_history": [
@@ -1057,6 +1064,15 @@
       "Log Loss Klement": 1.472,
       "Log Loss Modelo 2": 1.642,
       "Log Loss Fusión": 1.879
+    },
+    {
+      "Partido": "Panamá vs. Inglaterra",
+      "Real": "0–2",
+      "Pred. Marcador": "1–4",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 0.784,
+      "Log Loss Modelo 2": 0.596,
+      "Log Loss Fusión": 0.158
     }
   ],
   "fuerzas": {
@@ -1237,8 +1253,8 @@
       "defensa": 0.238
     },
     "Inglaterra": {
-      "ataque": 2.128,
-      "defensa": 1.2147
+      "ataque": 1.8772000000000002,
+      "defensa": 1.0672
     },
     "Croacia": {
       "ataque": 2.0605,
@@ -1249,8 +1265,8 @@
       "defensa": 0.2498999999999999
     },
     "Panamá": {
-      "ataque": 1.5101999999999998,
-      "defensa": 1.0107
+      "ataque": 1.3626999999999998,
+      "defensa": 0.7598999999999999
     }
   }
 }
