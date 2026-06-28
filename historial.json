@@ -489,6 +489,13 @@
       "goles_l": 1,
       "goles_v": 3,
       "grupo": "K"
+    },
+    "60": {
+      "local": "Austria",
+      "visitante": "Argelia",
+      "goles_l": 3,
+      "goles_v": 3,
+      "grupo": "J"
     }
   },
   "audit_history": [
@@ -1121,6 +1128,15 @@
       "Log Loss Klement": 1.208,
       "Log Loss Modelo 2": 1.137,
       "Log Loss Fusión": 3.028
+    },
+    {
+      "Partido": "Austria vs. Argelia",
+      "Real": "3–3",
+      "Pred. Marcador": "3–1",
+      "✅ Marcador": "❌",
+      "Log Loss Klement": 1.576,
+      "Log Loss Modelo 2": 1.65,
+      "Log Loss Fusión": 2.023
     }
   ],
   "fuerzas": {
@@ -1273,12 +1289,12 @@
       "defensa": 1.0747999999999998
     },
     "Austria": {
-      "ataque": 1.7454999999999998,
-      "defensa": 1.1133
+      "ataque": 1.6905,
+      "defensa": 1.2412999999999998
     },
     "Argelia": {
-      "ataque": 1.5775000000000001,
-      "defensa": 1.0711000000000002
+      "ataque": 1.7055000000000002,
+      "defensa": 1.0161000000000002
     },
     "Jordania": {
       "ataque": 1.3774000000000002,
