@@ -1189,8 +1189,8 @@
       "defensa": 1.1107
     },
     "Brasil": {
-      "ataque": 2.0250999999999997,
-      "defensa": 1.0133
+      "ataque": 1.7250999999999996,
+      "defensa": 0.6909000000000001
     },
     "Marruecos": {
       "ataque": 1.8580999999999999,
@@ -1241,8 +1241,8 @@
       "defensa": 0.9633999999999998
     },
     "Japón": {
-      "ataque": 1.8873,
-      "defensa": 0.7911999999999999
+      "ataque": 1.5649,
+      "defensa": 0.49119999999999986
     },
     "Suecia": {
       "ataque": 1.7975999999999999,
@@ -1355,6 +1355,13 @@
       "visitante": "Sudáfrica",
       "goles_l": 1,
       "goles_v": 0,
+      "fase": "Ronda de 32"
+    },
+    "74": {
+      "local": "Brasil",
+      "visitante": "Japón",
+      "goles_l": 2,
+      "goles_v": 1,
       "fase": "Ronda de 32"
     }
   }
