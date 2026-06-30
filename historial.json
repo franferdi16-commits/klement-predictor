@@ -1229,8 +1229,8 @@
       "defensa": 0.4667999999999999
     },
     "Costa de Marfil": {
-      "ataque": 1.5039,
-      "defensa": 0.4576
+      "ataque": 1.1894,
+      "defensa": 0.15759999999999996
     },
     "Ecuador": {
       "ataque": 1.502,
@@ -1293,8 +1293,8 @@
       "defensa": 1.3511
     },
     "Noruega": {
-      "ataque": 1.808,
-      "defensa": 0.7901
+      "ataque": 1.508,
+      "defensa": 0.4756
     },
     "Irak": {
       "ataque": 1.312,
@@ -1381,6 +1381,13 @@
       "fase": "Ronda de 32",
       "penales_l": 2,
       "penales_v": 3
+    },
+    "77": {
+      "local": "Costa de Marfil",
+      "visitante": "Noruega",
+      "goles_l": 1,
+      "goles_v": 2,
+      "fase": "Ronda de 32"
     }
   }
 }
