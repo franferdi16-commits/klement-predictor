@@ -1193,8 +1193,8 @@
       "defensa": 0.6909000000000001
     },
     "Marruecos": {
-      "ataque": 1.8580999999999999,
-      "defensa": 1.0101999999999998
+      "ataque": 1.4924,
+      "defensa": 0.6101999999999997
     },
     "Haití": {
       "ataque": 1.2890000000000001,
@@ -1237,8 +1237,8 @@
       "defensa": 0.6311999999999998
     },
     "Países Bajos": {
-      "ataque": 2.3611999999999993,
-      "defensa": 0.9633999999999998
+      "ataque": 1.9611999999999994,
+      "defensa": 0.5976999999999998
     },
     "Japón": {
       "ataque": 1.5649,
@@ -1372,6 +1372,15 @@
       "fase": "Ronda de 32",
       "penales_l": 3,
       "penales_v": 4
+    },
+    "76": {
+      "local": "Países Bajos",
+      "visitante": "Marruecos",
+      "goles_l": 1,
+      "goles_v": 1,
+      "fase": "Ronda de 32",
+      "penales_l": 2,
+      "penales_v": 3
     }
   }
 }
