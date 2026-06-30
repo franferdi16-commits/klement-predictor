@@ -1209,8 +1209,8 @@
       "defensa": 1.5205
     },
     "Paraguay": {
-      "ataque": 1.4636,
-      "defensa": 0.3171999999999999
+      "ataque": 1.4136,
+      "defensa": 0.26719999999999994
     },
     "Australia": {
       "ataque": 1.2837999999999998,
@@ -1221,8 +1221,8 @@
       "defensa": 0.6263
     },
     "Alemania": {
-      "ataque": 1.9890000000000003,
-      "defensa": 1.5183
+      "ataque": 1.9390000000000003,
+      "defensa": 1.4683
     },
     "Curazao": {
       "ataque": 0.996,
@@ -1363,6 +1363,15 @@
       "goles_l": 2,
       "goles_v": 1,
       "fase": "Ronda de 32"
+    },
+    "75": {
+      "local": "Alemania",
+      "visitante": "Paraguay",
+      "goles_l": 1,
+      "goles_v": 1,
+      "fase": "Ronda de 32",
+      "penales_l": 3,
+      "penales_v": 4
     }
   }
 }
