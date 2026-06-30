@@ -1245,8 +1245,8 @@
       "defensa": 0.49119999999999986
     },
     "Suecia": {
-      "ataque": 1.7975999999999999,
-      "defensa": 0.9786999999999999
+      "ataque": 1.4406999999999999,
+      "defensa": 0.7787
     },
     "Túnez": {
       "ataque": 1.498,
@@ -1285,8 +1285,8 @@
       "defensa": 0.1
     },
     "Francia": {
-      "ataque": 2.2889999999999997,
-      "defensa": 1.0701
+      "ataque": 2.0889999999999995,
+      "defensa": 0.7132000000000001
     },
     "Senegal": {
       "ataque": 2.1229,
@@ -1387,6 +1387,13 @@
       "visitante": "Noruega",
       "goles_l": 1,
       "goles_v": 2,
+      "fase": "Ronda de 32"
+    },
+    "78": {
+      "local": "Francia",
+      "visitante": "Suecia",
+      "goles_l": 3,
+      "goles_v": 0,
       "fase": "Ronda de 32"
     }
   }
