@@ -1329,12 +1329,12 @@
       "defensa": 0.9741000000000001
     },
     "República Democrática del Congo": {
-      "ataque": 1.5909,
+      "ataque": 1.5489,
       "defensa": 0.1
     },
     "Inglaterra": {
-      "ataque": 1.8772000000000002,
-      "defensa": 1.0672
+      "ataque": 1.5772000000000002,
+      "defensa": 1.0252
     },
     "Croacia": {
       "ataque": 1.7605000000000002,
@@ -1401,6 +1401,13 @@
       "visitante": "Ecuador",
       "goles_l": 2,
       "goles_v": 0,
+      "fase": "Ronda de 32"
+    },
+    "80": {
+      "local": "Inglaterra",
+      "visitante": "República Democrática del Congo",
+      "goles_l": 2,
+      "goles_v": 1,
       "fase": "Ronda de 32"
     }
   }
