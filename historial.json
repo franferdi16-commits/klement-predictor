@@ -1157,8 +1157,8 @@
   ],
   "fuerzas": {
     "México": {
-      "ataque": 1.9837999999999996,
-      "defensa": 1.2277
+      "ataque": 2.0337999999999994,
+      "defensa": 1.0777
     },
     "Sudáfrica": {
       "ataque": 1.3600999999999996,
@@ -1233,8 +1233,8 @@
       "defensa": 0.15759999999999996
     },
     "Ecuador": {
-      "ataque": 1.502,
-      "defensa": 0.6311999999999998
+      "ataque": 1.3519999999999999,
+      "defensa": 0.6811999999999998
     },
     "Países Bajos": {
       "ataque": 1.9611999999999994,
@@ -1393,6 +1393,13 @@
       "local": "Francia",
       "visitante": "Suecia",
       "goles_l": 3,
+      "goles_v": 0,
+      "fase": "Ronda de 32"
+    },
+    "79": {
+      "local": "México",
+      "visitante": "Ecuador",
+      "goles_l": 2,
       "goles_v": 0,
       "fase": "Ronda de 32"
     }
