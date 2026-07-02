@@ -1177,7 +1177,7 @@
       "defensa": 0.6520999999999999
     },
     "Bosnia y Herzegovina": {
-      "ataque": 1.5909,
+      "ataque": 1.5203,
       "defensa": 0.1
     },
     "Catar": {
@@ -1205,8 +1205,8 @@
       "defensa": 0.9347
     },
     "Estados Unidos": {
-      "ataque": 1.8019999999999994,
-      "defensa": 1.5205
+      "ataque": 1.5019999999999993,
+      "defensa": 1.4499
     },
     "Paraguay": {
       "ataque": 1.4136,
@@ -1415,6 +1415,13 @@
       "visitante": "Senegal",
       "goles_l": 3,
       "goles_v": 2,
+      "fase": "Ronda de 32"
+    },
+    "82": {
+      "local": "Estados Unidos",
+      "visitante": "Bosnia y Herzegovina",
+      "goles_l": 2,
+      "goles_v": 0,
       "fase": "Ronda de 32"
     }
   }
