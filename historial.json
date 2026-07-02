@@ -1253,8 +1253,8 @@
       "defensa": 1.3248
     },
     "Bélgica": {
-      "ataque": 2.0043,
-      "defensa": 1.4043
+      "ataque": 1.9252000000000002,
+      "defensa": 1.3071000000000002
     },
     "Irán": {
       "ataque": 1.5895,
@@ -1289,8 +1289,8 @@
       "defensa": 0.7132000000000001
     },
     "Senegal": {
-      "ataque": 2.1229,
-      "defensa": 1.3511
+      "ataque": 2.0257,
+      "defensa": 1.272
     },
     "Noruega": {
       "ataque": 1.508,
@@ -1408,6 +1408,13 @@
       "visitante": "República Democrática del Congo",
       "goles_l": 2,
       "goles_v": 1,
+      "fase": "Ronda de 32"
+    },
+    "81": {
+      "local": "Bélgica",
+      "visitante": "Senegal",
+      "goles_l": 3,
+      "goles_v": 2,
       "fase": "Ronda de 32"
     }
   }
