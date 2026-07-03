@@ -1269,8 +1269,8 @@
       "defensa": 0.1
     },
     "España": {
-      "ataque": 1.8256999999999999,
-      "defensa": 1.0615999999999999
+      "ataque": 1.7170999999999998,
+      "defensa": 0.7321999999999999
     },
     "Uruguay": {
       "ataque": 1.6544999999999999,
@@ -1305,8 +1305,8 @@
       "defensa": 1.1013999999999997
     },
     "Austria": {
-      "ataque": 1.6905,
-      "defensa": 1.2412999999999998
+      "ataque": 1.3611,
+      "defensa": 1.1326999999999998
     },
     "Argelia": {
       "ataque": 1.7055000000000002,
@@ -1421,6 +1421,13 @@
       "local": "Estados Unidos",
       "visitante": "Bosnia y Herzegovina",
       "goles_l": 2,
+      "goles_v": 0,
+      "fase": "Ronda de 32"
+    },
+    "83": {
+      "local": "España",
+      "visitante": "Austria",
+      "goles_l": 3,
       "goles_v": 0,
       "fase": "Ronda de 32"
     }
