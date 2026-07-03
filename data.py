@@ -178,37 +178,39 @@ FIXTURE_ELIMINATORIAS = [
     {"id":88,  "fase":"Ronda de 32", "local":"Argentina",                     "visitante":"Cabo Verde",                       "fecha":"4 jul"},
 
     # ══ RONDA DE 16 (Octavos) — IDs 89–96 ══
-    # Cruces oficiales FIFA confirmados
-    # 89: W78(Francia) vs W75(Paraguay)
-    # 90: W73(Canadá)  vs W76(Marruecos)
-    # 91: W74(Brasil)  vs W77(Noruega)
-    # 92: W79(México)  vs W80(W Inglaterra/RD Congo → W80)
-    # 93: W81(Bélgica/Senegal) vs W86(Australia/Egipto)
-    # 94: W82(EE.UU./Bosnia)   vs W83(España/Austria)
-    # 95: W85(Portugal/Croacia) vs W87(Suiza/Argelia)
-    # 96: W88(Argentina/Cabo Verde) vs W84(Colombia/Ghana)
-    {"id":89,  "fase":"Ronda de 16", "local":"W78", "visitante":"W75", "fecha":"4 jul"},
+    # Cruces oficiales FIFA del bracket PDF confirmado
+    # Lado izquierdo del bracket:
+    # 89: W75(Paraguay)    vs W78(Francia)       → 4 jul 18:00
+    # 90: W73(Canadá)      vs W76(Marruecos)     → 4 jul 14:00
+    # 93: W85(Portugal)    vs W83(España)        → 6 jul 16:00
+    # 94: W82(EE.UU.)      vs W81(Bélgica)       → 6 jul 21:00
+    # Lado derecho del bracket:
+    # 91: W74(Brasil)      vs W77(Noruega)       → 5 jul 17:00
+    # 92: W79(México)      vs W80(Inglaterra)    → 5 jul 21:00
+    # 95: W84(Suiza)       vs W87(Col/Ghana)     → 7 jul 17:00
+    # 96: W86(Aus/Egipto)  vs W88(Arg/CaboVerde) → 7 jul 13:00
+    {"id":89,  "fase":"Ronda de 16", "local":"W75", "visitante":"W78", "fecha":"4 jul"},
     {"id":90,  "fase":"Ronda de 16", "local":"W73", "visitante":"W76", "fecha":"4 jul"},
-    {"id":91,  "fase":"Ronda de 16", "local":"W74", "visitante":"W77", "fecha":"6 jul"},
-    {"id":92,  "fase":"Ronda de 16", "local":"W79", "visitante":"W80", "fecha":"6 jul"},
-    {"id":93,  "fase":"Ronda de 16", "local":"W81", "visitante":"W86", "fecha":"7 jul"},
-    {"id":94,  "fase":"Ronda de 16", "local":"W82", "visitante":"W83", "fecha":"7 jul"},
-    {"id":95,  "fase":"Ronda de 16", "local":"W85", "visitante":"W87", "fecha":"8 jul"},
-    {"id":96,  "fase":"Ronda de 16", "local":"W88", "visitante":"W84", "fecha":"8 jul"},
+    {"id":91,  "fase":"Ronda de 16", "local":"W74", "visitante":"W77", "fecha":"5 jul"},
+    {"id":92,  "fase":"Ronda de 16", "local":"W79", "visitante":"W80", "fecha":"5 jul"},
+    {"id":93,  "fase":"Ronda de 16", "local":"W85", "visitante":"W83", "fecha":"6 jul"},
+    {"id":94,  "fase":"Ronda de 16", "local":"W82", "visitante":"W81", "fecha":"6 jul"},
+    {"id":95,  "fase":"Ronda de 16", "local":"W84", "visitante":"W87", "fecha":"7 jul"},
+    {"id":96,  "fase":"Ronda de 16", "local":"W86", "visitante":"W88", "fecha":"7 jul"},
 
     # ══ CUARTOS DE FINAL — IDs 97–100 ══
-    # 97: W89 vs W90
-    # 98: W93 vs W94
-    # 99: W91 vs W92
-    # 100: W95 vs W96
-    {"id":97,  "fase":"Cuartos de final", "local":"W89", "visitante":"W90", "fecha":"9-11 jul"},
-    {"id":98,  "fase":"Cuartos de final", "local":"W93", "visitante":"W94", "fecha":"9-11 jul"},
-    {"id":99,  "fase":"Cuartos de final", "local":"W91", "visitante":"W92", "fecha":"9-11 jul"},
-    {"id":100, "fase":"Cuartos de final", "local":"W95", "visitante":"W96", "fecha":"9-11 jul"},
+    # Lado izquierdo: W89 vs W90 (9 jul), W93 vs W94 (10 jul)
+    # Lado derecho:   W91 vs W92 (11 jul), W95 vs W96 (11 jul)
+    {"id":97,  "fase":"Cuartos de final", "local":"W89", "visitante":"W90", "fecha":"9 jul"},
+    {"id":98,  "fase":"Cuartos de final", "local":"W93", "visitante":"W94", "fecha":"10 jul"},
+    {"id":99,  "fase":"Cuartos de final", "local":"W91", "visitante":"W92", "fecha":"11 jul"},
+    {"id":100, "fase":"Cuartos de final", "local":"W95", "visitante":"W96", "fecha":"11 jul"},
 
     # ══ SEMIFINALES — IDs 101–102 ══
-    {"id":101, "fase":"Semifinal", "local":"W97", "visitante":"W98", "fecha":"14-15 jul"},
-    {"id":102, "fase":"Semifinal", "local":"W99", "visitante":"W100","fecha":"14-15 jul"},
+    # 101: W97 vs W98 (14 jul)
+    # 102: W99 vs W100 (15 jul)
+    {"id":101, "fase":"Semifinal", "local":"W97", "visitante":"W98", "fecha":"14 jul"},
+    {"id":102, "fase":"Semifinal", "local":"W99", "visitante":"W100","fecha":"15 jul"},
 
     # ══ TERCER PUESTO — ID 103 ══
     {"id":103, "fase":"Tercer Puesto", "local":"L101", "visitante":"L102", "fecha":"18 jul"},
