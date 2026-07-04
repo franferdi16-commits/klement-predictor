@@ -1281,7 +1281,7 @@
       "defensa": 0.4745999999999999
     },
     "Cabo Verde": {
-      "ataque": 1.3092,
+      "ataque": 1.4002,
       "defensa": 0.1
     },
     "Francia": {
@@ -1301,8 +1301,8 @@
       "defensa": 0.9896
     },
     "Argentina": {
-      "ataque": 2.1319999999999997,
-      "defensa": 1.1013999999999997
+      "ataque": 1.9319999999999997,
+      "defensa": 1.1923999999999997
     },
     "Austria": {
       "ataque": 1.3611,
@@ -1459,6 +1459,13 @@
       "visitante": "Ghana",
       "goles_l": 1,
       "goles_v": 0,
+      "fase": "Ronda de 32"
+    },
+    "88": {
+      "local": "Argentina",
+      "visitante": "Cabo Verde",
+      "goles_l": 3,
+      "goles_v": 2,
       "fase": "Ronda de 32"
     }
   }
