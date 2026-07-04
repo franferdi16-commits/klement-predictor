@@ -1213,8 +1213,8 @@
       "defensa": 0.26719999999999994
     },
     "Australia": {
-      "ataque": 1.2837999999999998,
-      "defensa": 0.5719999999999998
+      "ataque": 1.0082999999999998,
+      "defensa": 0.17199999999999982
     },
     "Turquía": {
       "ataque": 1.6005999999999998,
@@ -1261,8 +1261,8 @@
       "defensa": 1.2953
     },
     "Egipto": {
-      "ataque": 1.7127999999999997,
-      "defensa": 0.8029999999999999
+      "ataque": 1.3127999999999997,
+      "defensa": 0.5274999999999999
     },
     "Nueva Zelanda": {
       "ataque": 1.1360000000000001,
@@ -1444,6 +1444,15 @@
       "goles_l": 2,
       "goles_v": 1,
       "fase": "Ronda de 32"
+    },
+    "86": {
+      "local": "Australia",
+      "visitante": "Egipto",
+      "goles_l": 1,
+      "goles_v": 1,
+      "fase": "Ronda de 32",
+      "penales_l": 2,
+      "penales_v": 4
     }
   }
 }
