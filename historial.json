@@ -1157,8 +1157,8 @@
   ],
   "fuerzas": {
     "México": {
-      "ataque": 2.0337999999999994,
-      "defensa": 1.0777
+      "ataque": 1.8686999999999994,
+      "defensa": 0.9455000000000001
     },
     "Sudáfrica": {
       "ataque": 1.3600999999999996,
@@ -1333,8 +1333,8 @@
       "defensa": 0.1
     },
     "Inglaterra": {
-      "ataque": 1.5772000000000002,
-      "defensa": 1.0252
+      "ataque": 1.445,
+      "defensa": 0.8600999999999999
     },
     "Croacia": {
       "ataque": 1.5018000000000002,
@@ -1487,6 +1487,13 @@
       "visitante": "Noruega",
       "goles_l": 1,
       "goles_v": 2,
+      "fase": "Ronda de 16"
+    },
+    "92": {
+      "local": "México",
+      "visitante": "Inglaterra",
+      "goles_l": 2,
+      "goles_v": 3,
       "fase": "Ronda de 16"
     }
   }
