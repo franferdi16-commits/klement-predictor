@@ -1173,8 +1173,8 @@
       "defensa": 0.8255
     },
     "Canadá": {
-      "ataque": 1.3677000000000001,
-      "defensa": 0.6520999999999999
+      "ataque": 1.0749000000000002,
+      "defensa": 0.5609999999999999
     },
     "Bosnia y Herzegovina": {
       "ataque": 1.5203,
@@ -1193,8 +1193,8 @@
       "defensa": 0.6909000000000001
     },
     "Marruecos": {
-      "ataque": 1.4924,
-      "defensa": 0.6101999999999997
+      "ataque": 1.4013,
+      "defensa": 0.31739999999999974
     },
     "Haití": {
       "ataque": 1.2890000000000001,
@@ -1473,6 +1473,13 @@
       "visitante": "Francia",
       "goles_l": 0,
       "goles_v": 1,
+      "fase": "Ronda de 16"
+    },
+    "90": {
+      "local": "Canadá",
+      "visitante": "Marruecos",
+      "goles_l": 0,
+      "goles_v": 3,
       "fase": "Ronda de 16"
     }
   }
