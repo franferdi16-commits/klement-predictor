@@ -1269,8 +1269,8 @@
       "defensa": 0.1
     },
     "España": {
-      "ataque": 1.7170999999999998,
-      "defensa": 0.7321999999999999
+      "ataque": 1.4052999999999998,
+      "defensa": 0.28219999999999984
     },
     "Uruguay": {
       "ataque": 1.6544999999999999,
@@ -1317,8 +1317,8 @@
       "defensa": 0.4682000000000001
     },
     "Portugal": {
-      "ataque": 1.729,
-      "defensa": 0.9228999999999999
+      "ataque": 1.2790000000000001,
+      "defensa": 0.6110999999999999
     },
     "Colombia": {
       "ataque": 1.295,
@@ -1494,6 +1494,13 @@
       "visitante": "Inglaterra",
       "goles_l": 2,
       "goles_v": 3,
+      "fase": "Ronda de 16"
+    },
+    "93": {
+      "local": "Portugal",
+      "visitante": "España",
+      "goles_l": 0,
+      "goles_v": 1,
       "fase": "Ronda de 16"
     }
   }
