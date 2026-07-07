@@ -1205,8 +1205,8 @@
       "defensa": 0.9347
     },
     "Estados Unidos": {
-      "ataque": 1.5019999999999993,
-      "defensa": 1.4499
+      "ataque": 1.1984999999999992,
+      "defensa": 1.4198
     },
     "Paraguay": {
       "ataque": 1.1648,
@@ -1253,8 +1253,8 @@
       "defensa": 1.3248
     },
     "Bélgica": {
-      "ataque": 1.9252000000000002,
-      "defensa": 1.3071000000000002
+      "ataque": 1.8951000000000002,
+      "defensa": 1.0036
     },
     "Irán": {
       "ataque": 1.5895,
@@ -1501,6 +1501,13 @@
       "visitante": "España",
       "goles_l": 0,
       "goles_v": 1,
+      "fase": "Ronda de 16"
+    },
+    "94": {
+      "local": "Estados Unidos",
+      "visitante": "Bélgica",
+      "goles_l": 1,
+      "goles_v": 4,
       "fase": "Ronda de 16"
     }
   }
