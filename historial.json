@@ -1261,8 +1261,8 @@
       "defensa": 1.2953
     },
     "Egipto": {
-      "ataque": 1.3127999999999997,
-      "defensa": 0.5274999999999999
+      "ataque": 1.1571999999999998,
+      "defensa": 0.42159999999999986
     },
     "Nueva Zelanda": {
       "ataque": 1.1360000000000001,
@@ -1301,8 +1301,8 @@
       "defensa": 0.9896
     },
     "Argentina": {
-      "ataque": 1.9319999999999997,
-      "defensa": 1.1923999999999997
+      "ataque": 1.8260999999999996,
+      "defensa": 1.0367999999999997
     },
     "Austria": {
       "ataque": 1.3611,
@@ -1518,6 +1518,13 @@
       "fase": "Ronda de 16",
       "penales_l": 4,
       "penales_v": 3
+    },
+    "96": {
+      "local": "Egipto",
+      "visitante": "Argentina",
+      "goles_l": 2,
+      "goles_v": 3,
+      "fase": "Ronda de 16"
     }
   }
 }
