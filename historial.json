@@ -1185,8 +1185,8 @@
       "defensa": 1.6035000000000001
     },
     "Suiza": {
-      "ataque": 1.3855000000000002,
-      "defensa": 0.9284
+      "ataque": 1.2355,
+      "defensa": 0.7784
     },
     "Brasil": {
       "ataque": 1.3750999999999995,
@@ -1321,8 +1321,8 @@
       "defensa": 0.6110999999999999
     },
     "Colombia": {
-      "ataque": 1.295,
-      "defensa": 0.9464999999999999
+      "ataque": 1.145,
+      "defensa": 0.7964999999999999
     },
     "Uzbekistán": {
       "ataque": 1.1045999999999996,
@@ -1509,6 +1509,15 @@
       "goles_l": 1,
       "goles_v": 4,
       "fase": "Ronda de 16"
+    },
+    "95": {
+      "local": "Suiza",
+      "visitante": "Colombia",
+      "goles_l": 0,
+      "goles_v": 0,
+      "fase": "Ronda de 16",
+      "penales_l": 4,
+      "penales_v": 3
     }
   }
 }
