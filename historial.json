@@ -1253,8 +1253,8 @@
       "defensa": 1.3248
     },
     "Bélgica": {
-      "ataque": 1.8951000000000002,
-      "defensa": 1.0036
+      "ataque": 1.5650000000000002,
+      "defensa": 0.7536
     },
     "Irán": {
       "ataque": 1.5895,
@@ -1269,8 +1269,8 @@
       "defensa": 0.1
     },
     "España": {
-      "ataque": 1.4052999999999998,
-      "defensa": 0.28219999999999984
+      "ataque": 1.1552999999999998,
+      "defensa": 0.1
     },
     "Uruguay": {
       "ataque": 1.6544999999999999,
@@ -1531,6 +1531,13 @@
       "visitante": "Marruecos",
       "goles_l": 2,
       "goles_v": 0,
+      "fase": "Cuartos de final"
+    },
+    "98": {
+      "local": "España",
+      "visitante": "Bélgica",
+      "goles_l": 2,
+      "goles_v": 1,
       "fase": "Cuartos de final"
     }
   }
