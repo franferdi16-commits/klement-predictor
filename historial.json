@@ -1193,8 +1193,8 @@
       "defensa": 0.6409
     },
     "Marruecos": {
-      "ataque": 1.4013,
-      "defensa": 0.31739999999999974
+      "ataque": 1.0102,
+      "defensa": 0.1
     },
     "Haití": {
       "ataque": 1.2890000000000001,
@@ -1285,8 +1285,8 @@
       "defensa": 0.1
     },
     "Francia": {
-      "ataque": 1.7652999999999994,
-      "defensa": 0.46440000000000003
+      "ataque": 1.5152999999999994,
+      "defensa": 0.1
     },
     "Senegal": {
       "ataque": 2.0257,
@@ -1525,6 +1525,13 @@
       "goles_l": 2,
       "goles_v": 3,
       "fase": "Ronda de 16"
+    },
+    "97": {
+      "local": "Francia",
+      "visitante": "Marruecos",
+      "goles_l": 2,
+      "goles_v": 0,
+      "fase": "Cuartos de final"
     }
   }
 }
