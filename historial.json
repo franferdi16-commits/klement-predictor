@@ -1293,8 +1293,8 @@
       "defensa": 1.272
     },
     "Noruega": {
-      "ataque": 1.458,
-      "defensa": 0.1256
+      "ataque": 1.2427,
+      "defensa": 0.1
     },
     "Irak": {
       "ataque": 1.312,
@@ -1333,8 +1333,8 @@
       "defensa": 0.1
     },
     "Inglaterra": {
-      "ataque": 1.445,
-      "defensa": 0.8600999999999999
+      "ataque": 1.2128,
+      "defensa": 0.6447999999999998
     },
     "Croacia": {
       "ataque": 1.5018000000000002,
@@ -1538,6 +1538,13 @@
       "visitante": "Bélgica",
       "goles_l": 2,
       "goles_v": 1,
+      "fase": "Cuartos de final"
+    },
+    "99": {
+      "local": "Noruega",
+      "visitante": "Inglaterra",
+      "goles_l": 1,
+      "goles_v": 2,
       "fase": "Cuartos de final"
     }
   }
