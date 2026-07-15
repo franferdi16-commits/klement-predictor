@@ -1269,7 +1269,7 @@
       "defensa": 0.1
     },
     "España": {
-      "ataque": 1.1552999999999998,
+      "ataque": 0.9434999999999998,
       "defensa": 0.1
     },
     "Uruguay": {
@@ -1285,7 +1285,7 @@
       "defensa": 0.1
     },
     "Francia": {
-      "ataque": 1.5152999999999994,
+      "ataque": 1.0652999999999995,
       "defensa": 0.1
     },
     "Senegal": {
@@ -1555,6 +1555,13 @@
       "fase": "Cuartos de final",
       "penales_l": 0,
       "penales_v": 0
+    },
+    "101": {
+      "local": "Francia",
+      "visitante": "España",
+      "goles_l": 0,
+      "goles_v": 2,
+      "fase": "Semifinal"
     }
   }
 }
