@@ -1301,8 +1301,8 @@
       "defensa": 0.9896
     },
     "Argentina": {
-      "ataque": 1.7201999999999995,
-      "defensa": 0.6872999999999997
+      "ataque": 1.5142999999999995,
+      "defensa": 0.33729999999999966
     },
     "Austria": {
       "ataque": 1.3611,
@@ -1333,8 +1333,8 @@
       "defensa": 0.1
     },
     "Inglaterra": {
-      "ataque": 1.2128,
-      "defensa": 0.6447999999999998
+      "ataque": 0.8628,
+      "defensa": 0.4388999999999998
     },
     "Croacia": {
       "ataque": 1.5018000000000002,
@@ -1560,6 +1560,13 @@
       "local": "Francia",
       "visitante": "España",
       "goles_l": 0,
+      "goles_v": 2,
+      "fase": "Semifinal"
+    },
+    "102": {
+      "local": "Inglaterra",
+      "visitante": "Argentina",
+      "goles_l": 1,
       "goles_v": 2,
       "fase": "Semifinal"
     }
