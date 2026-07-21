@@ -1285,8 +1285,8 @@
       "defensa": 0.1
     },
     "Francia": {
-      "ataque": 1.0652999999999995,
-      "defensa": 0.1
+      "ataque": 1.3152999999999995,
+      "defensa": 0.55
     },
     "Senegal": {
       "ataque": 2.0257,
@@ -1333,8 +1333,8 @@
       "defensa": 0.1
     },
     "Inglaterra": {
-      "ataque": 0.8628,
-      "defensa": 0.4388999999999998
+      "ataque": 1.3128,
+      "defensa": 0.6888999999999998
     },
     "Croacia": {
       "ataque": 1.5018000000000002,
@@ -1569,6 +1569,13 @@
       "goles_l": 1,
       "goles_v": 2,
       "fase": "Semifinal"
+    },
+    "103": {
+      "local": "Francia",
+      "visitante": "Inglaterra",
+      "goles_l": 4,
+      "goles_v": 6,
+      "fase": "Tercer Puesto"
     }
   }
 }
