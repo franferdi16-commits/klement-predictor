@@ -1269,7 +1269,7 @@
       "defensa": 0.1
     },
     "España": {
-      "ataque": 0.9434999999999998,
+      "ataque": 0.8934999999999997,
       "defensa": 0.1
     },
     "Uruguay": {
@@ -1301,8 +1301,8 @@
       "defensa": 0.9896
     },
     "Argentina": {
-      "ataque": 1.5142999999999995,
-      "defensa": 0.33729999999999966
+      "ataque": 1.3642999999999996,
+      "defensa": 0.28729999999999967
     },
     "Austria": {
       "ataque": 1.3611,
@@ -1576,6 +1576,15 @@
       "goles_l": 4,
       "goles_v": 6,
       "fase": "Tercer Puesto"
+    },
+    "104": {
+      "local": "España",
+      "visitante": "Argentina",
+      "goles_l": 1,
+      "goles_v": 0,
+      "fase": "Final",
+      "penales_l": 0,
+      "penales_v": 0
     }
   }
 }
